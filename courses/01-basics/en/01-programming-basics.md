@@ -287,12 +287,16 @@ the more specific case never gets a chance to run.
 
 ## Next
 
-This was Course 1's last chapter. Two independent courses build on it, and
-neither requires the other — pick whichever sounds more interesting, or do
-both:
+This was Course 1's last chapter. Every other course in this repository
+builds only on this one — none of them requires any of the others, so
+pick whichever sounds more interesting:
 
-- [Course 2 – Calculator Console](../../02-calculator-console/en/01-calculator-console.md) — the same idea, entirely in the browser console.
+- [Course 2 – Calculator Console](../../02-calculator-console/en/01-calculator-console.md) — a calculator, entirely in the browser console.
 - [Course 3 – Calculator GUI](../../03-calculator-gui/en/01-calculator-gui.md) — the same idea, with a real, clickable interface.
+- [Course 4 – To-Do List](../../04-todo-list/en/01-todo-list.md) — add, check off, and remove tasks, saved between visits.
+- [Course 5 – Unit Converter](../../05-unit-converter/en/01-unit-converter.md) — convert length, weight, and temperature.
+- [Course 6 – Quiz](../../06-quiz/en/01-quiz.md) — a multiple-choice quiz with scoring.
+- [Course 7 – Memory Game](../../07-memory-game/en/01-memory-game.md) — a card-matching memory game.
 
-Either way, every one of these building blocks becomes part of one real
-program.
+Whichever you pick, every one of these building blocks becomes part of one
+real program.

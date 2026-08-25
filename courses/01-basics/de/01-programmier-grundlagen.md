@@ -301,11 +301,15 @@ zum Zug.
 
 ## Weiter
 
-Das war das letzte Kapitel von Kurs 1. Zwei unabhängige Kurse bauen darauf
-auf, und keiner setzt den anderen voraus — wähl, was dich mehr reizt, oder
-mach beide:
+Das war das letzte Kapitel von Kurs 1. Jeder andere Kurs in diesem
+Repository baut nur auf diesem hier auf — keiner setzt einen der anderen
+voraus, wähl also, was dich mehr reizt:
 
-- [Kurs 2 – Taschenrechner Konsole](../../02-calculator-console/de/01-taschenrechner-konsole.md) — dieselbe Idee, komplett in der Browser-Konsole.
+- [Kurs 2 – Taschenrechner Konsole](../../02-calculator-console/de/01-taschenrechner-konsole.md) — ein Taschenrechner, komplett in der Browser-Konsole.
 - [Kurs 3 – Taschenrechner GUI](../../03-calculator-gui/de/01-taschenrechner-gui.md) — dieselbe Idee, mit einer echten, klickbaren Oberfläche.
+- [Kurs 4 – To-Do-Liste](../../04-todo-list/de/01-to-do-liste.md) — Aufgaben hinzufügen, abhaken und entfernen, gespeichert über Besuche hinweg.
+- [Kurs 5 – Einheitenumrechner](../../05-unit-converter/de/01-einheitenumrechner.md) — Länge, Gewicht und Temperatur umrechnen.
+- [Kurs 6 – Quiz](../../06-quiz/de/01-quiz.md) — ein Multiple-Choice-Quiz mit Punktestand.
+- [Kurs 7 – Memory-Spiel](../../07-memory-game/de/01-memory-spiel.md) — ein Karten-Memory-Spiel.
 
 So oder so wird jeder einzelne dieser Bausteine Teil eines echten Programms.
