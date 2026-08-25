@@ -66,13 +66,13 @@ Eine Schritt-für-Schritt-Anleitung (inklusive dem Öffnen der Konsole) steht in
 
 Dieses Repository ist darauf angelegt, mit der Zeit mehr als einen Kurs zu
 enthalten. Jeder bekommt unter `courses/` seine eigene Nummer, in der
-Reihenfolge, in der er entstanden ist — ein künftiger Kurs 5 landet also
-unter `courses/05-.../`, direkt neben diesen vieren, ohne sie anzufassen.
+Reihenfolge, in der er entstanden ist — ein künftiger Kurs 6 landet also
+unter `courses/06-.../`, direkt neben diesen fünfen, ohne sie anzufassen.
 
 Kurs 1 ist die gemeinsame Grundlage, die jeder spätere Kurs voraussetzt.
-Kurs 2, Kurs 3 und Kurs 4 sind jeweils **unabhängige, eigenständige**
-Projekte, die nur Kurs 1 voraussetzen — keiner setzt einen der anderen
-voraus. Wähl, was dich mehr reizt, in welcher Reihenfolge du willst.
+Kurs 2 bis Kurs 5 sind jeweils **unabhängige, eigenständige** Projekte, die
+nur Kurs 1 voraussetzen — keiner setzt einen der anderen voraus. Wähl, was
+dich mehr reizt, in welcher Reihenfolge du willst.
 
 ### Kurs 1 – Basics (`courses/01-basics/`)
 
@@ -112,15 +112,26 @@ Taschenrechner-Button hinausgeht.
 |---|---|---|
 | 1 | [To-Do-Liste](courses/04-todo-list/de/01-to-do-liste.md) | Objektliterale, Arrays aus Objekten, Daten als HTML rendern, Persistenz mit `localStorage` |
 
+### Kurs 5 – Einheitenumrechner (`courses/05-unit-converter/`)
+
+Setzt nur Kurs 1 voraus. Rechnet Länge, Gewicht und Temperatur zwischen
+Einheiten um und gibt dir spürbar weniger fertigen Code zum Abtippen als
+frühere Kurse — der Punkt hier ist, die Umrechnungslogik selbst zu bauen,
+sobald du die Bausteine dafür hast.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Einheitenumrechner](courses/05-unit-converter/de/01-einheitenumrechner.md) | Das Nachschlagetabellen-Muster, Elemente mit `document.createElement` bauen, eine Funktion verallgemeinern, indem man eine Annahme zu einem Parameter macht |
+
 Es kommen mit der Zeit weitere Kurse dazu; dieser Abschnitt wächst mit.
 
 ## Projektideen
 
-Sobald du Kurs 2, Kurs 3 und Kurs 4 abgeschlossen hast, findest du in
+Sobald du Kurs 2 bis Kurs 5 abgeschlossen hast, findest du in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md) eine sortierte Liste dessen, was
 als Nächstes gebaut werden könnte — vom naheliegenden nächsten Schritt bis zu
 etwas wirklich Ambitioniertem. Sie liegt an der Wurzel des Repositories,
-nicht innerhalb eines einzelnen Kurses, weil jede dieser Ideen der Kurs 5
+nicht innerhalb eines einzelnen Kurses, weil jede dieser Ideen der Kurs 6
 dieses Repositories werden könnte.
 
 ## Wie du diesen Kurs nutzt
@@ -134,9 +145,9 @@ dieses Repositories werden könnte.
    Ordnung — komm später zurück, wenn du magst.
 4. Innerhalb eines Kurses verwenden spätere Kapitel ausdrücklich Code aus
    früheren weiter. Über Kurse hinweg wird dagegen nichts außer Kurs 1
-   vorausgesetzt — Kurs 2, Kurs 3 und Kurs 4 bauen ihre jeweilige Logik
-   bewusst von Grund auf neu, damit sich jeder davon in beliebiger
-   Reihenfolge bearbeiten lässt.
+   vorausgesetzt — Kurs 2 bis Kurs 5 bauen ihre jeweilige Logik bewusst
+   von Grund auf neu, damit sich jeder davon in beliebiger Reihenfolge
+   bearbeiten lässt.
 5. Links innerhalb eines Kapitels führen genau dort, wo ein neuer Begriff
    auftaucht, zur passenden Seite bei [MDN Web Docs](https://developer.mozilla.org/de/)
    (dem Standard-Nachschlagewerk für JavaScript) — statt sie am Ende in einem
@@ -165,7 +176,12 @@ courses/
     de/                        Kapiteltexte, Deutsch
     code/                      die lauffähige To-Do-Liste (index.html, style.css, script.js)
     assets/                    Screenshots aus dem Kapitel
-  05-.../                    künftige Kurse, nach demselben Muster
+  05-unit-converter/         Kurs 5 — Einheitenumrechner
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      der lauffähige Einheitenumrechner (index.html, style.css, script.js)
+    assets/                    Screenshots aus dem Kapitel
+  06-.../                    künftige Kurse, nach demselben Muster
 ```
 
 ## Mitwirken

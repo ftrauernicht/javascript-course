@@ -62,11 +62,11 @@ Step-by-step setup instructions (including how to open the console) are in
 
 This repository is meant to hold more than one course over time. Each one
 gets its own number under `courses/`, in the order it was written, so a
-future Course 5 lands at `courses/05-.../` alongside these four without
+future Course 6 lands at `courses/06-.../` alongside these five without
 disturbing them.
 
-Course 1 is the shared foundation every later course assumes. Courses 2, 3,
-and 4 are each **independent, standalone** projects that only assume
+Course 1 is the shared foundation every later course assumes. Courses 2
+through 5 are each **independent, standalone** projects that only assume
 Course 1 — none of them requires any of the others. Pick whichever sounds
 more interesting, in whatever order you like.
 
@@ -107,15 +107,26 @@ data-to-HTML rendering pattern that scales far beyond one calculator button.
 |---|---|---|
 | 1 | [To-Do List](courses/04-todo-list/en/01-todo-list.md) | Object literals, arrays of objects, rendering data as HTML, `localStorage` persistence |
 
+### Course 5 – Unit Converter (`courses/05-unit-converter/`)
+
+Assumes Course 1 only. Converts length, weight, and temperature between
+units, and hands you noticeably less finished code to copy than earlier
+courses — the point here is to build the calculation logic yourself once
+you've got the pieces.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Unit Converter](courses/05-unit-converter/en/01-unit-converter.md) | The lookup-table pattern, building elements with `document.createElement`, generalizing a function by turning an assumption into a parameter |
+
 More courses will be added over time; this section grows with them.
 
 ## Project ideas
 
-Once you've finished Courses 2, 3, and 4, [PROJECT-IDEAS.md](PROJECT-IDEAS.md)
+Once you've finished Courses 2 through 5, [PROJECT-IDEAS.md](PROJECT-IDEAS.md)
 has a ranked list of what to build next — from a straightforward next step
 to a genuinely ambitious one. It lives at the repository root, not inside a
 single course, because any of these ideas could become this repository's
-Course 5.
+Course 6.
 
 ## How to use this course
 
@@ -127,7 +138,7 @@ Course 5.
    challenge). Skipping the optional parts is completely fine — come back to
    them later if you like.
 4. Within a course, later chapters explicitly reuse code from earlier ones.
-   Across courses, nothing is assumed except Course 1 — Courses 2, 3, and 4
+   Across courses, nothing is assumed except Course 1 — Courses 2 through 5
    each build whatever logic they need from scratch, on purpose, so any of
    them can be done first.
 5. Links inside each chapter point to the relevant [MDN Web Docs](https://developer.mozilla.org/)
@@ -157,7 +168,12 @@ courses/
     de/                        chapter text, German
     code/                      the working to-do list (index.html, style.css, script.js)
     assets/                    screenshots used in the chapter
-  05-.../                    future courses, same pattern
+  05-unit-converter/         Course 5 — unit converter
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      the working unit converter (index.html, style.css, script.js)
+    assets/                    screenshots used in the chapter
+  06-.../                    future courses, same pattern
 ```
 
 ## Contributing
