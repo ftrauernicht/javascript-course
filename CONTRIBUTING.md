@@ -66,6 +66,6 @@ for you to assemble yourself, with the finished version only in
 goal is for learners to think and build, not just retype.
 
 **Commit messages** follow [Conventional Commits](https://www.conventionalcommits.org/)
-(`feat: add Course 11 - ...`, `fix: ...`, `docs: ...`). A new course is
+(`feat: add Course 12 - ...`, `fix: ...`, `docs: ...`). A new course is
 typically one `feat:` commit covering the chapter text, code, assets, and
 the README/PROJECT-IDEAS updates together.

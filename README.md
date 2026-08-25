@@ -50,9 +50,10 @@ Either way, nothing here needs installing, building, or a server to run.
 Course 1 lives entirely in the browser console (no files at all). Course 2
 is the same — typed directly into the console (an optional challenge near
 the end has you paste in one reference file). Course 3's calculator runs by
-simply double-clicking its `index.html`. The one exception is
-[Course 10](courses/10-rest-api/en/01-rest-api.md), which needs
-[Node.js](https://nodejs.org/) installed — it says so up front. Start
+simply double-clicking its `index.html`. The exceptions are
+[Course 10](courses/10-rest-api/en/01-rest-api.md) and
+[Course 11](courses/11-notes-app/en/01-notes-app.md), which need
+[Node.js](https://nodejs.org/) installed — both say so up front. Start
 reading at [Course 1 – Basics, Chapter 0](courses/01-basics/en/00-introduction.md).
 
 ## What you need before you start
@@ -63,7 +64,7 @@ Nothing to install for Course 1 — just a computer and a modern browser.
 |---|---|---|
 | A browser | To open the developer console, our first "code editor" | [Google Chrome](https://www.google.com/chrome/), [Mozilla Firefox](https://www.mozilla.org/firefox/) |
 | A text editor | For Course 3 (the GUI calculator), to write HTML/CSS/JS files | [Visual Studio Code](https://code.visualstudio.com/) |
-| [Node.js](https://nodejs.org/) | For Course 10 (the REST API), to run JavaScript outside the browser | [nodejs.org](https://nodejs.org/) |
+| [Node.js](https://nodejs.org/) | For Courses 10-11, to run JavaScript outside the browser | [nodejs.org](https://nodejs.org/) |
 
 Step-by-step setup instructions (including how to open the console) are in
 [Course 1 – Basics, Chapter 0](courses/01-basics/en/00-introduction.md).
@@ -72,11 +73,11 @@ Step-by-step setup instructions (including how to open the console) are in
 
 This repository is meant to hold more than one course over time. Each one
 gets its own number under `courses/`, in the order it was written, so a
-future Course 11 lands at `courses/11-.../` alongside these ten without
+future Course 12 lands at `courses/12-.../` alongside these eleven without
 disturbing them.
 
 Course 1 is the shared foundation every later course assumes. Courses 2
-through 10 are each **independent, standalone** projects that only assume
+through 11 are each **independent, standalone** projects that only assume
 Course 1 — none of them requires any of the others. Pick whichever sounds
 more interesting, in whatever order you like.
 
@@ -174,15 +175,25 @@ the first course where your JavaScript runs outside a browser entirely.
 |---|---|---|
 | 1 | [REST API](courses/10-rest-api/en/01-rest-api.md) | Node.js, npm, Express routing, HTTP methods and status codes, testing an API with `curl` |
 
+### Course 11 – Full-Stack Notes App (`courses/11-notes-app/`)
+
+Assumes Course 1 only. Connects a frontend and a backend for the first
+time — a notes app backed by a real SQLite database instead of memory or
+`localStorage`.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Notes App](courses/11-notes-app/en/01-notes-app.md) | SQL (`CREATE TABLE`/`SELECT`/`INSERT`/`UPDATE`/`DELETE`), Node's built-in `node:sqlite`, serving a frontend and an API from one Express server (no CORS) |
+
 More courses will be added over time; this section grows with them.
 
 ## Project ideas
 
-Once you've finished Courses 2 through 10, [PROJECT-IDEAS.md](PROJECT-IDEAS.md)
+Once you've finished Courses 2 through 11, [PROJECT-IDEAS.md](PROJECT-IDEAS.md)
 has a ranked list of what to build next — from a straightforward next step
 to a genuinely ambitious one. It lives at the repository root, not inside a
 single course, because any of these ideas could become this repository's
-Course 11.
+Course 12.
 
 ## How to use this course
 
@@ -194,7 +205,7 @@ Course 11.
    challenge). Skipping the optional parts is completely fine — come back to
    them later if you like.
 4. Within a course, later chapters explicitly reuse code from earlier ones.
-   Across courses, nothing is assumed except Course 1 — Courses 2 through 10
+   Across courses, nothing is assumed except Course 1 — Courses 2 through 11
    each build whatever logic they need from scratch, on purpose, so any of
    them can be done first.
 5. Links inside each chapter point to the relevant [MDN Web Docs](https://developer.mozilla.org/)
@@ -253,7 +264,12 @@ courses/
     en/                        chapter text, English
     de/                        chapter text, German
     code/                      the working server (package.json, server.js) — no assets/, no GUI
-  11-.../                    future courses, same pattern
+  11-notes-app/              Course 11 — full-stack notes app (Express + SQLite)
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      the working app (package.json, db.js, server.js, public/)
+    assets/                    screenshots used in the chapter
+  12-.../                    future courses, same pattern
 ```
 
 ## Contributing

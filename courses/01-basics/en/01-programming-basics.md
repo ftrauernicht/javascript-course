@@ -300,6 +300,7 @@ pick whichever sounds more interesting:
 - [Course 8 – Weather App](../../08-weather-app/en/01-weather-app.md) — real, live weather for any city you type in.
 - [Course 9 – Budget Tracker](../../09-budget-tracker/en/01-budget-tracker.md) — income and expenses with a category chart.
 - [Course 10 – REST API](../../10-rest-api/en/01-rest-api.md) — a small server built with Node.js and Express.
+- [Course 11 – Full-Stack Notes App](../../11-notes-app/en/01-notes-app.md) — a frontend and backend talking to each other over a real database.
 
 Whichever you pick, every one of these building blocks becomes part of one
 real program.

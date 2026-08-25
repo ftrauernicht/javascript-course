@@ -314,5 +314,6 @@ voraus, wähl also, was dich mehr reizt:
 - [Kurs 8 – Wetter-App](../../08-weather-app/de/01-wetter-app.md) — echtes, aktuelles Wetter für eine beliebige eingetippte Stadt.
 - [Kurs 9 – Budget-Tracker](../../09-budget-tracker/de/01-budget-tracker.md) — Einnahmen und Ausgaben mit einem Kategorie-Diagramm.
 - [Kurs 10 – REST-API](../../10-rest-api/de/01-rest-api.md) — ein kleiner Server, gebaut mit Node.js und Express.
+- [Kurs 11 – Full-Stack-Notizen-App](../../11-notes-app/de/01-notizen-app.md) — ein Frontend und ein Backend, die über eine echte Datenbank miteinander sprechen.
 
 So oder so wird jeder einzelne dieser Bausteine Teil eines echten Programms.

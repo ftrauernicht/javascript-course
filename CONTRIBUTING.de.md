@@ -74,6 +74,6 @@ zu bevorzugen: das Ziel ist, dass Lernende denken und bauen, nicht nur
 abtippen.
 
 **Commit-Nachrichten** folgen [Conventional Commits](https://www.conventionalcommits.org/)
-(`feat: add Course 11 - ...`, `fix: ...`, `docs: ...`). Ein neuer Kurs ist
+(`feat: add Course 12 - ...`, `fix: ...`, `docs: ...`). Ein neuer Kurs ist
 typischerweise ein `feat:`-Commit, der Kapiteltext, Code, Assets und die
 README-/PROJECT-IDEAS-Aktualisierungen zusammen abdeckt.

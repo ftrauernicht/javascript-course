@@ -53,9 +53,10 @@ So oder so muss nichts installiert oder gebaut werden, und es braucht auch
 keinen Server. Kurs 1 spielt sich komplett in der Browser-Konsole ab. Kurs 2
 genauso — direkt in die Konsole eingetippt (eine optionale Herausforderung
 gegen Ende lässt dich eine Referenzdatei einfügen). Der Taschenrechner aus
-Kurs 3 läuft, indem du einfach seine `index.html` doppelklickst. Die eine
-Ausnahme ist [Kurs 10](courses/10-rest-api/de/01-rest-api.md), der
-[Node.js](https://nodejs.org/) installiert braucht — das steht dort auch
+Kurs 3 läuft, indem du einfach seine `index.html` doppelklickst. Die
+Ausnahmen sind [Kurs 10](courses/10-rest-api/de/01-rest-api.md) und
+[Kurs 11](courses/11-notes-app/de/01-notizen-app.md), die
+[Node.js](https://nodejs.org/) installiert brauchen — das steht in beiden
 gleich am Anfang. Los geht's bei
 [Kurs 1 – Basics, Kapitel 0](courses/01-basics/de/00-einleitung.md).
 
@@ -68,7 +69,7 @@ aktueller Browser.
 |---|---|---|
 | Ein Browser | Um die Entwicklerkonsole zu öffnen — unser erster "Code-Editor" | [Google Chrome](https://www.google.com/chrome/), [Mozilla Firefox](https://www.mozilla.org/firefox/) |
 | Ein Texteditor | Für Kurs 3 (den GUI-Taschenrechner), um HTML-/CSS-/JS-Dateien zu schreiben | [Visual Studio Code](https://code.visualstudio.com/) |
-| [Node.js](https://nodejs.org/) | Für Kurs 10 (die REST-API), um JavaScript außerhalb des Browsers auszuführen | [nodejs.org](https://nodejs.org/) |
+| [Node.js](https://nodejs.org/) | Für Kurs 10-11, um JavaScript außerhalb des Browsers auszuführen | [nodejs.org](https://nodejs.org/) |
 
 Eine Schritt-für-Schritt-Anleitung (inklusive dem Öffnen der Konsole) steht in
 [Kurs 1 – Basics, Kapitel 0](courses/01-basics/de/00-einleitung.md).
@@ -77,11 +78,11 @@ Eine Schritt-für-Schritt-Anleitung (inklusive dem Öffnen der Konsole) steht in
 
 Dieses Repository ist darauf angelegt, mit der Zeit mehr als einen Kurs zu
 enthalten. Jeder bekommt unter `courses/` seine eigene Nummer, in der
-Reihenfolge, in der er entstanden ist — ein künftiger Kurs 11 landet also
-unter `courses/11-.../`, direkt neben diesen zehn, ohne sie anzufassen.
+Reihenfolge, in der er entstanden ist — ein künftiger Kurs 12 landet also
+unter `courses/12-.../`, direkt neben diesen elf, ohne sie anzufassen.
 
 Kurs 1 ist die gemeinsame Grundlage, die jeder spätere Kurs voraussetzt.
-Kurs 2 bis Kurs 10 sind jeweils **unabhängige, eigenständige** Projekte, die
+Kurs 2 bis Kurs 11 sind jeweils **unabhängige, eigenständige** Projekte, die
 nur Kurs 1 voraussetzen — keiner setzt einen der anderen voraus. Wähl, was
 dich mehr reizt, in welcher Reihenfolge du willst.
 
@@ -183,15 +184,25 @@ Browsers läuft.
 |---|---|---|
 | 1 | [REST-API](courses/10-rest-api/de/01-rest-api.md) | Node.js, npm, Express-Routing, HTTP-Methoden und Statuscodes, eine API mit `curl` testen |
 
+### Kurs 11 – Full-Stack-Notizen-App (`courses/11-notes-app/`)
+
+Setzt nur Kurs 1 voraus. Verbindet zum ersten Mal ein Frontend und ein
+Backend — eine Notizen-App mit einer echten SQLite-Datenbank dahinter,
+statt Arbeitsspeicher oder `localStorage`.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Notizen-App](courses/11-notes-app/de/01-notizen-app.md) | SQL (`CREATE TABLE`/`SELECT`/`INSERT`/`UPDATE`/`DELETE`), Nodes eingebautes `node:sqlite`, ein Frontend und eine API vom selben Express-Server ausliefern (kein CORS) |
+
 Es kommen mit der Zeit weitere Kurse dazu; dieser Abschnitt wächst mit.
 
 ## Projektideen
 
-Sobald du Kurs 2 bis Kurs 10 abgeschlossen hast, findest du in
+Sobald du Kurs 2 bis Kurs 11 abgeschlossen hast, findest du in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md) eine sortierte Liste dessen, was
 als Nächstes gebaut werden könnte — vom naheliegenden nächsten Schritt bis zu
 etwas wirklich Ambitioniertem. Sie liegt an der Wurzel des Repositories,
-nicht innerhalb eines einzelnen Kurses, weil jede dieser Ideen der Kurs 11
+nicht innerhalb eines einzelnen Kurses, weil jede dieser Ideen der Kurs 12
 dieses Repositories werden könnte.
 
 ## Wie du diesen Kurs nutzt
@@ -205,7 +216,7 @@ dieses Repositories werden könnte.
    Ordnung — komm später zurück, wenn du magst.
 4. Innerhalb eines Kurses verwenden spätere Kapitel ausdrücklich Code aus
    früheren weiter. Über Kurse hinweg wird dagegen nichts außer Kurs 1
-   vorausgesetzt — Kurs 2 bis Kurs 10 bauen ihre jeweilige Logik bewusst
+   vorausgesetzt — Kurs 2 bis Kurs 11 bauen ihre jeweilige Logik bewusst
    von Grund auf neu, damit sich jeder davon in beliebiger Reihenfolge
    bearbeiten lässt.
 5. Links innerhalb eines Kapitels führen genau dort, wo ein neuer Begriff
@@ -265,7 +276,12 @@ courses/
     en/                        Kapiteltexte, Englisch
     de/                        Kapiteltexte, Deutsch
     code/                      der lauffähige Server (package.json, server.js) — kein assets/, keine GUI
-  11-.../                    künftige Kurse, nach demselben Muster
+  11-notes-app/              Kurs 11 — Full-Stack-Notizen-App (Express + SQLite)
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      die lauffähige App (package.json, db.js, server.js, public/)
+    assets/                    Screenshots aus dem Kapitel
+  12-.../                    künftige Kurse, nach demselben Muster
 ```
 
 ## Mitwirken
