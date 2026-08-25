@@ -18,17 +18,10 @@ and a real-world convention: professional codebases are written in English
 regardless of which language the team speaks, so it is worth getting used to
 from the very first line.
 
-A few of the things you'll build along the way, starting from nothing but
-programming basics in Course 1:
-
-<table>
-<tr>
-<td align="center"><img src="courses/03-calculator-gui/assets/empty.png" width="150" alt="The GUI calculator built in Course 3" /><br />Course 3 — Calculator GUI</td>
-<td align="center"><img src="courses/04-todo-list/assets/populated.png" width="150" alt="The to-do list built in Course 4" /><br />Course 4 — To-Do List</td>
-<td align="center"><img src="courses/06-quiz/assets/correct.png" width="150" alt="The quiz built in Course 6" /><br />Course 6 — Quiz</td>
-<td align="center"><img src="courses/07-memory-game/assets/win.png" width="150" alt="The memory game built in Course 7" /><br />Course 7 — Memory Game</td>
-</tr>
-</table>
+Starting from nothing but programming basics in Course 1, the
+[Courses](#courses) section below shows a screenshot of what you actually
+build in each one — scroll through it and watch the apps get visibly more
+capable, chapter by chapter.
 
 ## Get this course onto your computer
 
@@ -105,6 +98,8 @@ no files, no interface.
 Assumes Course 1 only (not Course 2). The same idea, with a real, clickable
 interface.
 
+<img src="courses/03-calculator-gui/assets/result-14.png" width="220" alt="The calculator display showing 14, after clicking 3, +, 4, ×, 2, =" />
+
 | # | Chapter | What you'll learn |
 |---|---|---|
 | 1 | [Calculator with a GUI](courses/03-calculator-gui/en/01-calculator-gui.md) | HTML/CSS/JS basics, the DOM, events, and a gentle first step into OOP (classes) |
@@ -113,6 +108,8 @@ interface.
 
 Assumes Course 1 only. A to-do list with add/check-off/remove and a
 data-to-HTML rendering pattern that scales far beyond one calculator button.
+
+<img src="courses/04-todo-list/assets/populated.png" width="360" alt="The to-do list with three tasks, one checked off" />
 
 | # | Chapter | What you'll learn |
 |---|---|---|
@@ -125,6 +122,8 @@ units, and hands you noticeably less finished code to copy than earlier
 courses — the point here is to build the calculation logic yourself once
 you've got the pieces.
 
+<img src="courses/05-unit-converter/assets/result.png" width="360" alt="The result showing 5 m converts to 0.01 km" />
+
 | # | Chapter | What you'll learn |
 |---|---|---|
 | 1 | [Unit Converter](courses/05-unit-converter/en/01-unit-converter.md) | The lookup-table pattern, building elements with `document.createElement`, generalizing a function by turning an assumption into a parameter |
@@ -135,6 +134,8 @@ Assumes Course 1 only. A multiple-choice quiz with scoring, per-answer
 feedback, and a result screen — and, like Course 5, gives you noticeably
 less finished code than the earliest courses did.
 
+<img src="courses/06-quiz/assets/correct.png" width="360" alt="A correctly answered question, highlighted in green" />
+
 | # | Chapter | What you'll learn |
 |---|---|---|
 | 1 | [Quiz](courses/06-quiz/en/01-quiz.md) | Classes as templates for objects, modeling a list of questions, re-rendering from data, breaking a feature into small named functions |
@@ -143,6 +144,8 @@ less finished code than the earliest courses did.
 
 Assumes Course 1 only. A card-matching memory game with a shuffled grid,
 a CSS-only flip animation, and a delayed flip-back on a mismatch.
+
+<img src="courses/07-memory-game/assets/win.png" width="360" alt="The win message showing the game was won in 9 moves, with every card matched" />
 
 | # | Chapter | What you'll learn |
 |---|---|---|
@@ -153,6 +156,8 @@ a CSS-only flip animation, and a delayed flip-back on a mismatch.
 Assumes Course 1 only. Looks up real, live weather for any city you type
 in — the first course where your code talks to a real, public API.
 
+<img src="courses/08-weather-app/assets/result.png" width="360" alt="The weather app showing Berlin's current weather" />
+
 | # | Chapter | What you'll learn |
 |---|---|---|
 | 1 | [Weather App](courses/08-weather-app/en/01-weather-app.md) | Promises, `async`/`await`, `fetch`, `try...catch`, calling a real public API |
@@ -161,6 +166,8 @@ in — the first course where your code talks to a real, public API.
 
 Assumes Course 1 only. Tracks income and expenses, with a balance and a
 category breakdown drawn as a plain CSS bar chart.
+
+<img src="courses/09-budget-tracker/assets/populated.png" width="360" alt="The budget tracker with several entries and a category breakdown" />
 
 | # | Chapter | What you'll learn |
 |---|---|---|
@@ -180,6 +187,8 @@ the first course where your JavaScript runs outside a browser entirely.
 Assumes Course 1 only. Connects a frontend and a backend for the first
 time — a notes app backed by a real SQLite database instead of memory or
 `localStorage`.
+
+<img src="courses/11-notes-app/assets/populated.png" width="360" alt="The notes app with a note selected in the editor" />
 
 | # | Chapter | What you'll learn |
 |---|---|---|

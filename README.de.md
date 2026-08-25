@@ -19,17 +19,10 @@ bewusste Entscheidung und zugleich eine reale Konvention: Professioneller
 Code wird unabhängig von der Teamsprache auf Englisch geschrieben, und daran
 gewöhnt man sich am besten von der ersten Zeile an.
 
-Ein paar Dinge, die du unterwegs baust, angefangen bei nichts als den
-Programmier-Grundlagen aus Kurs 1:
-
-<table>
-<tr>
-<td align="center"><img src="courses/03-calculator-gui/assets/empty.png" width="150" alt="Der in Kurs 3 gebaute GUI-Taschenrechner" /><br />Kurs 3 — Taschenrechner GUI</td>
-<td align="center"><img src="courses/04-todo-list/assets/populated.png" width="150" alt="Die in Kurs 4 gebaute To-Do-Liste" /><br />Kurs 4 — To-Do-Liste</td>
-<td align="center"><img src="courses/06-quiz/assets/correct.png" width="150" alt="Das in Kurs 6 gebaute Quiz" /><br />Kurs 6 — Quiz</td>
-<td align="center"><img src="courses/07-memory-game/assets/win.png" width="150" alt="Das in Kurs 7 gebaute Memory-Spiel" /><br />Kurs 7 — Memory-Spiel</td>
-</tr>
-</table>
+Angefangen bei nichts als den Programmier-Grundlagen aus Kurs 1 zeigt der
+Abschnitt [Kurse](#kurse) weiter unten zu jedem Kurs einen Screenshot
+dessen, was du tatsächlich baust — scroll durch und sieh zu, wie die Apps
+Kapitel für Kapitel spürbar mehr können.
 
 ## Diesen Kurs auf deinen Computer holen
 
@@ -110,6 +103,8 @@ Browser-Konsole gebaut — keine Dateien, keine Oberfläche.
 Setzt nur Kurs 1 voraus (nicht Kurs 2). Dieselbe Idee, mit einer echten,
 klickbaren Oberfläche.
 
+<img src="courses/03-calculator-gui/assets/result-14.png" width="220" alt="Die Anzeige des Taschenrechners zeigt 14, nach dem Klicken von 3, +, 4, ×, 2, =" />
+
 | # | Kapitel | Was du lernst |
 |---|---|---|
 | 1 | [Taschenrechner mit Oberfläche (GUI)](courses/03-calculator-gui/de/01-taschenrechner-gui.md) | HTML-/CSS-/JS-Grundlagen, das DOM, Events und ein sanfter erster Schritt in Richtung OOP (Klassen) |
@@ -119,6 +114,8 @@ klickbaren Oberfläche.
 Setzt nur Kurs 1 voraus. Eine To-Do-Liste mit Hinzufügen/Abhaken/Entfernen
 und einem Daten-zu-HTML-Rendering-Muster, das weit über einen einzelnen
 Taschenrechner-Button hinausgeht.
+
+<img src="courses/04-todo-list/assets/populated.png" width="360" alt="Die To-Do-Liste mit drei Aufgaben, eine davon abgehakt" />
 
 | # | Kapitel | Was du lernst |
 |---|---|---|
@@ -131,6 +128,8 @@ Einheiten um und gibt dir spürbar weniger fertigen Code zum Abtippen als
 frühere Kurse — der Punkt hier ist, die Umrechnungslogik selbst zu bauen,
 sobald du die Bausteine dafür hast.
 
+<img src="courses/05-unit-converter/assets/result.png" width="360" alt="Das Ergebnis zeigt, dass 5 m zu 0.01 km werden" />
+
 | # | Kapitel | Was du lernst |
 |---|---|---|
 | 1 | [Einheitenumrechner](courses/05-unit-converter/de/01-einheitenumrechner.md) | Das Nachschlagetabellen-Muster, Elemente mit `document.createElement` bauen, eine Funktion verallgemeinern, indem man eine Annahme zu einem Parameter macht |
@@ -140,6 +139,8 @@ sobald du die Bausteine dafür hast.
 Setzt nur Kurs 1 voraus. Ein Multiple-Choice-Quiz mit Punktestand,
 Rückmeldung zu jeder Antwort und einem Ergebnisbildschirm — und gibt dir,
 wie Kurs 5, spürbar weniger fertigen Code als die frühesten Kurse.
+
+<img src="courses/06-quiz/assets/correct.png" width="360" alt="Eine richtig beantwortete Frage, grün hervorgehoben" />
 
 | # | Kapitel | Was du lernst |
 |---|---|---|
@@ -151,6 +152,8 @@ Setzt nur Kurs 1 voraus. Ein Karten-Memory-Spiel mit gemischtem Raster,
 einer reinen CSS-Flip-Animation und verzögertem Zurückdrehen bei einem
 Fehlversuch.
 
+<img src="courses/07-memory-game/assets/win.png" width="360" alt="Die Gewinnnachricht zeigt, dass das Spiel in 9 Zügen gewonnen wurde, mit jeder Karte zugeordnet" />
+
 | # | Kapitel | Was du lernst |
 |---|---|---|
 | 1 | [Memory-Spiel](courses/07-memory-game/de/01-memory-spiel.md) | Spielzustand als Daten modellieren, der Fisher-Yates-Shuffle, `setTimeout`, CSS-Übergänge für einen Flip-Effekt |
@@ -161,6 +164,8 @@ Setzt nur Kurs 1 voraus. Ruft echtes, aktuelles Wetter für eine beliebige
 eingetippte Stadt ab — der erste Kurs, in dem dein Code mit einer echten,
 öffentlichen API spricht.
 
+<img src="courses/08-weather-app/assets/result.png" width="360" alt="Die Wetter-App zeigt das aktuelle Wetter für Berlin" />
+
 | # | Kapitel | Was du lernst |
 |---|---|---|
 | 1 | [Wetter-App](courses/08-weather-app/de/01-wetter-app.md) | Promises, `async`/`await`, `fetch`, `try...catch`, eine echte öffentliche API aufrufen |
@@ -169,6 +174,8 @@ eingetippte Stadt ab — der erste Kurs, in dem dein Code mit einer echten,
 
 Setzt nur Kurs 1 voraus. Erfasst Einnahmen und Ausgaben, mit Kontostand und
 einer Kategorie-Aufschlüsselung als reinem CSS-Balkendiagramm.
+
+<img src="courses/09-budget-tracker/assets/populated.png" width="360" alt="Der Budget-Tracker mit mehreren Einträgen und einer Kategorie-Aufschlüsselung" />
 
 | # | Kapitel | Was du lernst |
 |---|---|---|
@@ -189,6 +196,8 @@ Browsers läuft.
 Setzt nur Kurs 1 voraus. Verbindet zum ersten Mal ein Frontend und ein
 Backend — eine Notizen-App mit einer echten SQLite-Datenbank dahinter,
 statt Arbeitsspeicher oder `localStorage`.
+
+<img src="courses/11-notes-app/assets/populated.png" width="360" alt="Die Notizen-App mit einer im Editor ausgewählten Notiz" />
 
 | # | Kapitel | Was du lernst |
 |---|---|---|
