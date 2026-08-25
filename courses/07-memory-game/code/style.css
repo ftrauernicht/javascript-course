@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #1e1e2e;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 16px;
+}
+
+.app {
+  background: #2a2a3d;
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.hidden {
+  display: none;
+}
+
+#moves {
+  color: #b0b0c0;
+  font-size: 0.9rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.card {
+  aspect-ratio: 1;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  perspective: 600px;
+}
+
+.card-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner,
+.card.matched .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background: #3d3d5c;
+  color: #b0b0c0;
+}
+
+.card-back {
+  background: #4a4a6a;
+  transform: rotateY(180deg);
+}
+
+.card.matched .card-back {
+  background: #3a5c46;
+}
+
+#win-message p {
+  font-size: 1.1rem;
+}
+
+#restart-button {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #4cd964;
+  color: #11111c;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}

@@ -62,11 +62,11 @@ Step-by-step setup instructions (including how to open the console) are in
 
 This repository is meant to hold more than one course over time. Each one
 gets its own number under `courses/`, in the order it was written, so a
-future Course 7 lands at `courses/07-.../` alongside these six without
+future Course 8 lands at `courses/08-.../` alongside these seven without
 disturbing them.
 
 Course 1 is the shared foundation every later course assumes. Courses 2
-through 6 are each **independent, standalone** projects that only assume
+through 7 are each **independent, standalone** projects that only assume
 Course 1 — none of them requires any of the others. Pick whichever sounds
 more interesting, in whatever order you like.
 
@@ -128,15 +128,24 @@ less finished code than the earliest courses did.
 |---|---|---|
 | 1 | [Quiz](courses/06-quiz/en/01-quiz.md) | Classes as templates for objects, modeling a list of questions, re-rendering from data, breaking a feature into small named functions |
 
+### Course 7 – Memory Game (`courses/07-memory-game/`)
+
+Assumes Course 1 only. A card-matching memory game with a shuffled grid,
+a CSS-only flip animation, and a delayed flip-back on a mismatch.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Memory Game](courses/07-memory-game/en/01-memory-game.md) | Modeling game state as data, the Fisher-Yates shuffle, `setTimeout`, CSS transitions for a flip effect |
+
 More courses will be added over time; this section grows with them.
 
 ## Project ideas
 
-Once you've finished Courses 2 through 6, [PROJECT-IDEAS.md](PROJECT-IDEAS.md)
+Once you've finished Courses 2 through 7, [PROJECT-IDEAS.md](PROJECT-IDEAS.md)
 has a ranked list of what to build next — from a straightforward next step
 to a genuinely ambitious one. It lives at the repository root, not inside a
 single course, because any of these ideas could become this repository's
-Course 7.
+Course 8.
 
 ## How to use this course
 
@@ -148,7 +157,7 @@ Course 7.
    challenge). Skipping the optional parts is completely fine — come back to
    them later if you like.
 4. Within a course, later chapters explicitly reuse code from earlier ones.
-   Across courses, nothing is assumed except Course 1 — Courses 2 through 6
+   Across courses, nothing is assumed except Course 1 — Courses 2 through 7
    each build whatever logic they need from scratch, on purpose, so any of
    them can be done first.
 5. Links inside each chapter point to the relevant [MDN Web Docs](https://developer.mozilla.org/)
@@ -188,7 +197,12 @@ courses/
     de/                        chapter text, German
     code/                      the working quiz (index.html, style.css, script.js)
     assets/                    screenshots used in the chapter
-  07-.../                    future courses, same pattern
+  07-memory-game/            Course 7 — memory / matching game
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      the working memory game (index.html, style.css, script.js)
+    assets/                    screenshots used in the chapter
+  08-.../                    future courses, same pattern
 ```
 
 ## Contributing

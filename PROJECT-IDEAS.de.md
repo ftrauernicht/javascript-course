@@ -1,18 +1,18 @@
 🇩🇪 Deutsch | 🇬🇧 [English](PROJECT-IDEAS.md)
 
-[← Zurück zur Repository-Übersicht](README.de.md) · Kommt nach: [Kurs 2 – Taschenrechner Konsole](courses/02-calculator-console/de/01-taschenrechner-konsole.md), [Kurs 3 – Taschenrechner GUI](courses/03-calculator-gui/de/01-taschenrechner-gui.md), [Kurs 4 – To-Do-Liste](courses/04-todo-list/de/01-to-do-liste.md), [Kurs 5 – Einheitenumrechner](courses/05-unit-converter/de/01-einheitenumrechner.md) und [Kurs 6 – Quiz](courses/06-quiz/de/01-quiz.md)
+[← Zurück zur Repository-Übersicht](README.de.md) · Kommt nach: [Kurs 2 – Taschenrechner Konsole](courses/02-calculator-console/de/01-taschenrechner-konsole.md), [Kurs 3 – Taschenrechner GUI](courses/03-calculator-gui/de/01-taschenrechner-gui.md), [Kurs 4 – To-Do-Liste](courses/04-todo-list/de/01-to-do-liste.md), [Kurs 5 – Einheitenumrechner](courses/05-unit-converter/de/01-einheitenumrechner.md), [Kurs 6 – Quiz](courses/06-quiz/de/01-quiz.md) und [Kurs 7 – Memory-Spiel](courses/07-memory-game/de/01-memory-spiel.md)
 
 # Ideen für deine nächsten Projekte
 
-Kurs 2 bis Kurs 6 (der Taschenrechner, zweimal, eine To-Do-Liste, ein
-Einheitenumrechner und ein Quiz) decken die Grundlagen ausführlich ab —
-Variablen, Funktionen, das DOM, Daten als HTML rendern, ein erster Schritt
-in Richtung OOP. Was danach kommt,
+Kurs 2 bis Kurs 7 (der Taschenrechner, zweimal, eine To-Do-Liste, ein
+Einheitenumrechner, ein Quiz und ein Memory-Spiel) decken die Grundlagen
+ausführlich ab — Variablen, Funktionen, das DOM, Daten als HTML rendern,
+ein erster Schritt in Richtung OOP. Was danach kommt,
 liegt bei dir: hier ist eine sortierte Liste an Projektideen, grob geordnet
 von "naheliegender nächster Schritt" bis "wirklich ambitioniert", jeweils
 mit den wichtigsten neuen Fähigkeiten, die sie dir vermitteln würden. Wähl,
 was dir am meisten Spaß macht — Motivation zählt mehr als das strikte
-Einhalten der Reihenfolge. Jede dieser Ideen könnte der Kurs 7 dieses
+Einhalten der Reihenfolge. Jede dieser Ideen könnte der Kurs 8 dieses
 Repositories werden — oder einfach dein eigenes Nebenprojekt.
 
 | # | Projekt | Neue Fähigkeiten, zusätzlich zu dem, was du schon kannst | Schwierigkeit |
@@ -20,7 +20,7 @@ Repositories werden — oder einfach dein eigenes Nebenprojekt.
 | 1 | ~~To-Do-Liste~~ — Aufgaben hinzufügen, entfernen und abhaken | ✅ Gebaut — siehe [Kurs 4 – To-Do-Liste](courses/04-todo-list/de/01-to-do-liste.md) | ⭐ |
 | 2 | ~~Einheitenumrechner~~ — Länge, Gewicht, Temperatur | ✅ Gebaut — siehe [Kurs 5 – Einheitenumrechner](courses/05-unit-converter/de/01-einheitenumrechner.md) | ⭐ |
 | 3 | ~~Multiple-Choice-Quiz~~ — Fragen, Punktestand, ein Ergebnisbildschirm | ✅ Gebaut — siehe [Kurs 6 – Quiz](courses/06-quiz/de/01-quiz.md) | ⭐⭐ |
-| 4 | **Memory-Spiel** — Karten umdrehen, Paare finden | Spielzustand, [`setTimeout`](https://developer.mozilla.org/de/docs/Web/API/Window/setTimeout), CSS-Übergänge/Animationen | ⭐⭐ |
+| 4 | ~~Memory-Spiel~~ — Karten umdrehen, Paare finden | ✅ Gebaut — siehe [Kurs 7 – Memory-Spiel](courses/07-memory-game/de/01-memory-spiel.md) | ⭐⭐ |
 | 5 | **Wetter-App** — echtes Wetter für eine eingetippte Stadt | [`fetch`](https://developer.mozilla.org/de/docs/Web/API/Window/fetch), `async`/`await`, Arbeiten mit einer öffentlichen API und echtem JSON, Umgang mit Netzwerkfehlern | ⭐⭐⭐ |
 | 6 | **Budget-Tracker** — Einnahmen/Ausgaben, laufende Summen, Kategorien | Array-Methoden (`filter`, `map`, `reduce`), fortgeschrittenere Persistenz, ein erstes einfaches Diagramm | ⭐⭐⭐ |
 | 7 | **Eine kleine REST-API mit Node.js + Express** — dein eigener kleiner Server | [Node.js](https://nodejs.org/), npm, [Express](https://expressjs.com/), erstmals JavaScript außerhalb des Browsers ausführen | ⭐⭐⭐⭐ |
@@ -30,8 +30,9 @@ Repositories werden — oder einfach dein eigenes Nebenprojekt.
 
 Ein paar Anmerkungen zum Lesen dieser Liste:
 
-- Idee 4 braucht nichts über das hinaus, was Kurs 2 bis Kurs 6 schon
-  vermittelt haben — dieselben Werkzeuge, neue Arten von Problemen.
+- Ideen 2–4 brauchten nichts über das hinaus, was der jeweils vorherige
+  Kurs schon vermittelt hatte — dieselben Werkzeuge, neue Arten von
+  Problemen. Ab hier betreten die Ideen unten wirklich neues Terrain.
 - Idee 5 ist der natürliche Punkt, um "alles passiert sofort in meinem
   eigenen Code" hinter sich zu lassen und mit der Außenwelt umzugehen
   (Netzwerke sind langsam und schlagen manchmal fehl — das ist selbst eine
@@ -43,7 +44,7 @@ Ein paar Anmerkungen zum Lesen dieser Liste:
   hat, die sie lösen.
 
 Egal wofür du dich entscheidest: Dieselben Gewohnheiten aus Kurs 2 bis
-Kurs 6 gelten weiter — zuerst die Kernversion bauen, sie einfach halten,
+Kurs 7 gelten weiter — zuerst die Kernversion bauen, sie einfach halten,
 und erst dann zur
 optionalen, schwierigeren Variante eines Features greifen, wenn die einfache
 funktioniert.

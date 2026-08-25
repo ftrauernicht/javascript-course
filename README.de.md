@@ -66,11 +66,11 @@ Eine Schritt-für-Schritt-Anleitung (inklusive dem Öffnen der Konsole) steht in
 
 Dieses Repository ist darauf angelegt, mit der Zeit mehr als einen Kurs zu
 enthalten. Jeder bekommt unter `courses/` seine eigene Nummer, in der
-Reihenfolge, in der er entstanden ist — ein künftiger Kurs 7 landet also
-unter `courses/07-.../`, direkt neben diesen sechsen, ohne sie anzufassen.
+Reihenfolge, in der er entstanden ist — ein künftiger Kurs 8 landet also
+unter `courses/08-.../`, direkt neben diesen sieben, ohne sie anzufassen.
 
 Kurs 1 ist die gemeinsame Grundlage, die jeder spätere Kurs voraussetzt.
-Kurs 2 bis Kurs 6 sind jeweils **unabhängige, eigenständige** Projekte, die
+Kurs 2 bis Kurs 7 sind jeweils **unabhängige, eigenständige** Projekte, die
 nur Kurs 1 voraussetzen — keiner setzt einen der anderen voraus. Wähl, was
 dich mehr reizt, in welcher Reihenfolge du willst.
 
@@ -133,15 +133,25 @@ wie Kurs 5, spürbar weniger fertigen Code als die frühesten Kurse.
 |---|---|---|
 | 1 | [Quiz](courses/06-quiz/de/01-quiz.md) | Klassen als Vorlagen für Objekte, eine Liste von Fragen modellieren, aus Daten neu rendern, ein Feature in kleine benannte Funktionen aufteilen |
 
+### Kurs 7 – Memory-Spiel (`courses/07-memory-game/`)
+
+Setzt nur Kurs 1 voraus. Ein Karten-Memory-Spiel mit gemischtem Raster,
+einer reinen CSS-Flip-Animation und verzögertem Zurückdrehen bei einem
+Fehlversuch.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Memory-Spiel](courses/07-memory-game/de/01-memory-spiel.md) | Spielzustand als Daten modellieren, der Fisher-Yates-Shuffle, `setTimeout`, CSS-Übergänge für einen Flip-Effekt |
+
 Es kommen mit der Zeit weitere Kurse dazu; dieser Abschnitt wächst mit.
 
 ## Projektideen
 
-Sobald du Kurs 2 bis Kurs 6 abgeschlossen hast, findest du in
+Sobald du Kurs 2 bis Kurs 7 abgeschlossen hast, findest du in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md) eine sortierte Liste dessen, was
 als Nächstes gebaut werden könnte — vom naheliegenden nächsten Schritt bis zu
 etwas wirklich Ambitioniertem. Sie liegt an der Wurzel des Repositories,
-nicht innerhalb eines einzelnen Kurses, weil jede dieser Ideen der Kurs 7
+nicht innerhalb eines einzelnen Kurses, weil jede dieser Ideen der Kurs 8
 dieses Repositories werden könnte.
 
 ## Wie du diesen Kurs nutzt
@@ -155,7 +165,7 @@ dieses Repositories werden könnte.
    Ordnung — komm später zurück, wenn du magst.
 4. Innerhalb eines Kurses verwenden spätere Kapitel ausdrücklich Code aus
    früheren weiter. Über Kurse hinweg wird dagegen nichts außer Kurs 1
-   vorausgesetzt — Kurs 2 bis Kurs 6 bauen ihre jeweilige Logik bewusst
+   vorausgesetzt — Kurs 2 bis Kurs 7 bauen ihre jeweilige Logik bewusst
    von Grund auf neu, damit sich jeder davon in beliebiger Reihenfolge
    bearbeiten lässt.
 5. Links innerhalb eines Kapitels führen genau dort, wo ein neuer Begriff
@@ -196,7 +206,12 @@ courses/
     de/                        Kapiteltexte, Deutsch
     code/                      das lauffähige Quiz (index.html, style.css, script.js)
     assets/                    Screenshots aus dem Kapitel
-  07-.../                    künftige Kurse, nach demselben Muster
+  07-memory-game/            Kurs 7 — Memory-Spiel
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      das lauffähige Memory-Spiel (index.html, style.css, script.js)
+    assets/                    Screenshots aus dem Kapitel
+  08-.../                    künftige Kurse, nach demselben Muster
 ```
 
 ## Mitwirken
