@@ -297,6 +297,9 @@ pick whichever sounds more interesting:
 - [Course 5 – Unit Converter](../../05-unit-converter/en/01-unit-converter.md) — convert length, weight, and temperature.
 - [Course 6 – Quiz](../../06-quiz/en/01-quiz.md) — a multiple-choice quiz with scoring.
 - [Course 7 – Memory Game](../../07-memory-game/en/01-memory-game.md) — a card-matching memory game.
+- [Course 8 – Weather App](../../08-weather-app/en/01-weather-app.md) — real, live weather for any city you type in.
+- [Course 9 – Budget Tracker](../../09-budget-tracker/en/01-budget-tracker.md) — income and expenses with a category chart.
+- [Course 10 – REST API](../../10-rest-api/en/01-rest-api.md) — a small server built with Node.js and Express.
 
 Whichever you pick, every one of these building blocks becomes part of one
 real program.

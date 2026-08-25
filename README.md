@@ -50,8 +50,10 @@ Either way, nothing here needs installing, building, or a server to run.
 Course 1 lives entirely in the browser console (no files at all). Course 2
 is the same — typed directly into the console (an optional challenge near
 the end has you paste in one reference file). Course 3's calculator runs by
-simply double-clicking its `index.html`. Start reading at
-[Course 1 – Basics, Chapter 0](courses/01-basics/en/00-introduction.md).
+simply double-clicking its `index.html`. The one exception is
+[Course 10](courses/10-rest-api/en/01-rest-api.md), which needs
+[Node.js](https://nodejs.org/) installed — it says so up front. Start
+reading at [Course 1 – Basics, Chapter 0](courses/01-basics/en/00-introduction.md).
 
 ## What you need before you start
 
@@ -61,6 +63,7 @@ Nothing to install for Course 1 — just a computer and a modern browser.
 |---|---|---|
 | A browser | To open the developer console, our first "code editor" | [Google Chrome](https://www.google.com/chrome/), [Mozilla Firefox](https://www.mozilla.org/firefox/) |
 | A text editor | For Course 3 (the GUI calculator), to write HTML/CSS/JS files | [Visual Studio Code](https://code.visualstudio.com/) |
+| [Node.js](https://nodejs.org/) | For Course 10 (the REST API), to run JavaScript outside the browser | [nodejs.org](https://nodejs.org/) |
 
 Step-by-step setup instructions (including how to open the console) are in
 [Course 1 – Basics, Chapter 0](courses/01-basics/en/00-introduction.md).
@@ -69,11 +72,11 @@ Step-by-step setup instructions (including how to open the console) are in
 
 This repository is meant to hold more than one course over time. Each one
 gets its own number under `courses/`, in the order it was written, so a
-future Course 8 lands at `courses/08-.../` alongside these seven without
+future Course 11 lands at `courses/11-.../` alongside these ten without
 disturbing them.
 
 Course 1 is the shared foundation every later course assumes. Courses 2
-through 7 are each **independent, standalone** projects that only assume
+through 10 are each **independent, standalone** projects that only assume
 Course 1 — none of them requires any of the others. Pick whichever sounds
 more interesting, in whatever order you like.
 
@@ -144,15 +147,42 @@ a CSS-only flip animation, and a delayed flip-back on a mismatch.
 |---|---|---|
 | 1 | [Memory Game](courses/07-memory-game/en/01-memory-game.md) | Modeling game state as data, the Fisher-Yates shuffle, `setTimeout`, CSS transitions for a flip effect |
 
+### Course 8 – Weather App (`courses/08-weather-app/`)
+
+Assumes Course 1 only. Looks up real, live weather for any city you type
+in — the first course where your code talks to a real, public API.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Weather App](courses/08-weather-app/en/01-weather-app.md) | Promises, `async`/`await`, `fetch`, `try...catch`, calling a real public API |
+
+### Course 9 – Budget Tracker (`courses/09-budget-tracker/`)
+
+Assumes Course 1 only. Tracks income and expenses, with a balance and a
+category breakdown drawn as a plain CSS bar chart.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Budget Tracker](courses/09-budget-tracker/en/01-budget-tracker.md) | `.filter(...)`, `.reduce(...)`, `Object.keys(...)`, a CSS-only chart driven entirely by data |
+
+### Course 10 – REST API with Node.js + Express (`courses/10-rest-api/`)
+
+Assumes Course 1 only. Builds a small server with Node.js and Express —
+the first course where your JavaScript runs outside a browser entirely.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [REST API](courses/10-rest-api/en/01-rest-api.md) | Node.js, npm, Express routing, HTTP methods and status codes, testing an API with `curl` |
+
 More courses will be added over time; this section grows with them.
 
 ## Project ideas
 
-Once you've finished Courses 2 through 7, [PROJECT-IDEAS.md](PROJECT-IDEAS.md)
+Once you've finished Courses 2 through 10, [PROJECT-IDEAS.md](PROJECT-IDEAS.md)
 has a ranked list of what to build next — from a straightforward next step
 to a genuinely ambitious one. It lives at the repository root, not inside a
 single course, because any of these ideas could become this repository's
-Course 8.
+Course 11.
 
 ## How to use this course
 
@@ -164,7 +194,7 @@ Course 8.
    challenge). Skipping the optional parts is completely fine — come back to
    them later if you like.
 4. Within a course, later chapters explicitly reuse code from earlier ones.
-   Across courses, nothing is assumed except Course 1 — Courses 2 through 7
+   Across courses, nothing is assumed except Course 1 — Courses 2 through 10
    each build whatever logic they need from scratch, on purpose, so any of
    them can be done first.
 5. Links inside each chapter point to the relevant [MDN Web Docs](https://developer.mozilla.org/)
@@ -209,7 +239,21 @@ courses/
     de/                        chapter text, German
     code/                      the working memory game (index.html, style.css, script.js)
     assets/                    screenshots used in the chapter
-  08-.../                    future courses, same pattern
+  08-weather-app/            Course 8 — weather app (fetch, async/await)
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      the working weather app (index.html, style.css, script.js)
+    assets/                    screenshots used in the chapter
+  09-budget-tracker/         Course 9 — budget tracker
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      the working budget tracker (index.html, style.css, script.js)
+    assets/                    screenshots used in the chapter
+  10-rest-api/               Course 10 — REST API with Node.js + Express
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      the working server (package.json, server.js) — no assets/, no GUI
+  11-.../                    future courses, same pattern
 ```
 
 ## Contributing

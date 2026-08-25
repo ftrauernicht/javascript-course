@@ -311,5 +311,8 @@ voraus, wähl also, was dich mehr reizt:
 - [Kurs 5 – Einheitenumrechner](../../05-unit-converter/de/01-einheitenumrechner.md) — Länge, Gewicht und Temperatur umrechnen.
 - [Kurs 6 – Quiz](../../06-quiz/de/01-quiz.md) — ein Multiple-Choice-Quiz mit Punktestand.
 - [Kurs 7 – Memory-Spiel](../../07-memory-game/de/01-memory-spiel.md) — ein Karten-Memory-Spiel.
+- [Kurs 8 – Wetter-App](../../08-weather-app/de/01-wetter-app.md) — echtes, aktuelles Wetter für eine beliebige eingetippte Stadt.
+- [Kurs 9 – Budget-Tracker](../../09-budget-tracker/de/01-budget-tracker.md) — Einnahmen und Ausgaben mit einem Kategorie-Diagramm.
+- [Kurs 10 – REST-API](../../10-rest-api/de/01-rest-api.md) — ein kleiner Server, gebaut mit Node.js und Express.
 
 So oder so wird jeder einzelne dieser Bausteine Teil eines echten Programms.

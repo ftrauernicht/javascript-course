@@ -53,8 +53,11 @@ So oder so muss nichts installiert oder gebaut werden, und es braucht auch
 keinen Server. Kurs 1 spielt sich komplett in der Browser-Konsole ab. Kurs 2
 genauso — direkt in die Konsole eingetippt (eine optionale Herausforderung
 gegen Ende lässt dich eine Referenzdatei einfügen). Der Taschenrechner aus
-Kurs 3 läuft, indem du einfach seine `index.html` doppelklickst. Los geht's
-bei [Kurs 1 – Basics, Kapitel 0](courses/01-basics/de/00-einleitung.md).
+Kurs 3 läuft, indem du einfach seine `index.html` doppelklickst. Die eine
+Ausnahme ist [Kurs 10](courses/10-rest-api/de/01-rest-api.md), der
+[Node.js](https://nodejs.org/) installiert braucht — das steht dort auch
+gleich am Anfang. Los geht's bei
+[Kurs 1 – Basics, Kapitel 0](courses/01-basics/de/00-einleitung.md).
 
 ## Was du vorher brauchst
 
@@ -65,6 +68,7 @@ aktueller Browser.
 |---|---|---|
 | Ein Browser | Um die Entwicklerkonsole zu öffnen — unser erster "Code-Editor" | [Google Chrome](https://www.google.com/chrome/), [Mozilla Firefox](https://www.mozilla.org/firefox/) |
 | Ein Texteditor | Für Kurs 3 (den GUI-Taschenrechner), um HTML-/CSS-/JS-Dateien zu schreiben | [Visual Studio Code](https://code.visualstudio.com/) |
+| [Node.js](https://nodejs.org/) | Für Kurs 10 (die REST-API), um JavaScript außerhalb des Browsers auszuführen | [nodejs.org](https://nodejs.org/) |
 
 Eine Schritt-für-Schritt-Anleitung (inklusive dem Öffnen der Konsole) steht in
 [Kurs 1 – Basics, Kapitel 0](courses/01-basics/de/00-einleitung.md).
@@ -73,11 +77,11 @@ Eine Schritt-für-Schritt-Anleitung (inklusive dem Öffnen der Konsole) steht in
 
 Dieses Repository ist darauf angelegt, mit der Zeit mehr als einen Kurs zu
 enthalten. Jeder bekommt unter `courses/` seine eigene Nummer, in der
-Reihenfolge, in der er entstanden ist — ein künftiger Kurs 8 landet also
-unter `courses/08-.../`, direkt neben diesen sieben, ohne sie anzufassen.
+Reihenfolge, in der er entstanden ist — ein künftiger Kurs 11 landet also
+unter `courses/11-.../`, direkt neben diesen zehn, ohne sie anzufassen.
 
 Kurs 1 ist die gemeinsame Grundlage, die jeder spätere Kurs voraussetzt.
-Kurs 2 bis Kurs 7 sind jeweils **unabhängige, eigenständige** Projekte, die
+Kurs 2 bis Kurs 10 sind jeweils **unabhängige, eigenständige** Projekte, die
 nur Kurs 1 voraussetzen — keiner setzt einen der anderen voraus. Wähl, was
 dich mehr reizt, in welcher Reihenfolge du willst.
 
@@ -150,15 +154,44 @@ Fehlversuch.
 |---|---|---|
 | 1 | [Memory-Spiel](courses/07-memory-game/de/01-memory-spiel.md) | Spielzustand als Daten modellieren, der Fisher-Yates-Shuffle, `setTimeout`, CSS-Übergänge für einen Flip-Effekt |
 
+### Kurs 8 – Wetter-App (`courses/08-weather-app/`)
+
+Setzt nur Kurs 1 voraus. Ruft echtes, aktuelles Wetter für eine beliebige
+eingetippte Stadt ab — der erste Kurs, in dem dein Code mit einer echten,
+öffentlichen API spricht.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Wetter-App](courses/08-weather-app/de/01-wetter-app.md) | Promises, `async`/`await`, `fetch`, `try...catch`, eine echte öffentliche API aufrufen |
+
+### Kurs 9 – Budget-Tracker (`courses/09-budget-tracker/`)
+
+Setzt nur Kurs 1 voraus. Erfasst Einnahmen und Ausgaben, mit Kontostand und
+einer Kategorie-Aufschlüsselung als reinem CSS-Balkendiagramm.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Budget-Tracker](courses/09-budget-tracker/de/01-budget-tracker.md) | `.filter(...)`, `.reduce(...)`, `Object.keys(...)`, ein reines CSS-Diagramm, komplett aus Daten gesteuert |
+
+### Kurs 10 – REST-API mit Node.js + Express (`courses/10-rest-api/`)
+
+Setzt nur Kurs 1 voraus. Baut einen kleinen Server mit Node.js und
+Express — der erste Kurs, in dem dein JavaScript komplett außerhalb eines
+Browsers läuft.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [REST-API](courses/10-rest-api/de/01-rest-api.md) | Node.js, npm, Express-Routing, HTTP-Methoden und Statuscodes, eine API mit `curl` testen |
+
 Es kommen mit der Zeit weitere Kurse dazu; dieser Abschnitt wächst mit.
 
 ## Projektideen
 
-Sobald du Kurs 2 bis Kurs 7 abgeschlossen hast, findest du in
+Sobald du Kurs 2 bis Kurs 10 abgeschlossen hast, findest du in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md) eine sortierte Liste dessen, was
 als Nächstes gebaut werden könnte — vom naheliegenden nächsten Schritt bis zu
 etwas wirklich Ambitioniertem. Sie liegt an der Wurzel des Repositories,
-nicht innerhalb eines einzelnen Kurses, weil jede dieser Ideen der Kurs 8
+nicht innerhalb eines einzelnen Kurses, weil jede dieser Ideen der Kurs 11
 dieses Repositories werden könnte.
 
 ## Wie du diesen Kurs nutzt
@@ -172,7 +205,7 @@ dieses Repositories werden könnte.
    Ordnung — komm später zurück, wenn du magst.
 4. Innerhalb eines Kurses verwenden spätere Kapitel ausdrücklich Code aus
    früheren weiter. Über Kurse hinweg wird dagegen nichts außer Kurs 1
-   vorausgesetzt — Kurs 2 bis Kurs 7 bauen ihre jeweilige Logik bewusst
+   vorausgesetzt — Kurs 2 bis Kurs 10 bauen ihre jeweilige Logik bewusst
    von Grund auf neu, damit sich jeder davon in beliebiger Reihenfolge
    bearbeiten lässt.
 5. Links innerhalb eines Kapitels führen genau dort, wo ein neuer Begriff
@@ -218,7 +251,21 @@ courses/
     de/                        Kapiteltexte, Deutsch
     code/                      das lauffähige Memory-Spiel (index.html, style.css, script.js)
     assets/                    Screenshots aus dem Kapitel
-  08-.../                    künftige Kurse, nach demselben Muster
+  08-weather-app/            Kurs 8 — Wetter-App (fetch, async/await)
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      die lauffähige Wetter-App (index.html, style.css, script.js)
+    assets/                    Screenshots aus dem Kapitel
+  09-budget-tracker/         Kurs 9 — Budget-Tracker
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      der lauffähige Budget-Tracker (index.html, style.css, script.js)
+    assets/                    Screenshots aus dem Kapitel
+  10-rest-api/               Kurs 10 — REST-API mit Node.js + Express
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      der lauffähige Server (package.json, server.js) — kein assets/, keine GUI
+  11-.../                    künftige Kurse, nach demselben Muster
 ```
 
 ## Mitwirken
