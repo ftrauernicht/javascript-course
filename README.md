@@ -62,11 +62,11 @@ Step-by-step setup instructions (including how to open the console) are in
 
 This repository is meant to hold more than one course over time. Each one
 gets its own number under `courses/`, in the order it was written, so a
-future Course 6 lands at `courses/06-.../` alongside these five without
+future Course 7 lands at `courses/07-.../` alongside these six without
 disturbing them.
 
 Course 1 is the shared foundation every later course assumes. Courses 2
-through 5 are each **independent, standalone** projects that only assume
+through 6 are each **independent, standalone** projects that only assume
 Course 1 — none of them requires any of the others. Pick whichever sounds
 more interesting, in whatever order you like.
 
@@ -118,15 +118,25 @@ you've got the pieces.
 |---|---|---|
 | 1 | [Unit Converter](courses/05-unit-converter/en/01-unit-converter.md) | The lookup-table pattern, building elements with `document.createElement`, generalizing a function by turning an assumption into a parameter |
 
+### Course 6 – Quiz (`courses/06-quiz/`)
+
+Assumes Course 1 only. A multiple-choice quiz with scoring, per-answer
+feedback, and a result screen — and, like Course 5, gives you noticeably
+less finished code than the earliest courses did.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [Quiz](courses/06-quiz/en/01-quiz.md) | Classes as templates for objects, modeling a list of questions, re-rendering from data, breaking a feature into small named functions |
+
 More courses will be added over time; this section grows with them.
 
 ## Project ideas
 
-Once you've finished Courses 2 through 5, [PROJECT-IDEAS.md](PROJECT-IDEAS.md)
+Once you've finished Courses 2 through 6, [PROJECT-IDEAS.md](PROJECT-IDEAS.md)
 has a ranked list of what to build next — from a straightforward next step
 to a genuinely ambitious one. It lives at the repository root, not inside a
 single course, because any of these ideas could become this repository's
-Course 6.
+Course 7.
 
 ## How to use this course
 
@@ -138,7 +148,7 @@ Course 6.
    challenge). Skipping the optional parts is completely fine — come back to
    them later if you like.
 4. Within a course, later chapters explicitly reuse code from earlier ones.
-   Across courses, nothing is assumed except Course 1 — Courses 2 through 5
+   Across courses, nothing is assumed except Course 1 — Courses 2 through 6
    each build whatever logic they need from scratch, on purpose, so any of
    them can be done first.
 5. Links inside each chapter point to the relevant [MDN Web Docs](https://developer.mozilla.org/)
@@ -173,7 +183,12 @@ courses/
     de/                        chapter text, German
     code/                      the working unit converter (index.html, style.css, script.js)
     assets/                    screenshots used in the chapter
-  06-.../                    future courses, same pattern
+  06-quiz/                   Course 6 — multiple-choice quiz
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      the working quiz (index.html, style.css, script.js)
+    assets/                    screenshots used in the chapter
+  07-.../                    future courses, same pattern
 ```
 
 ## Contributing

@@ -66,11 +66,11 @@ Eine Schritt-für-Schritt-Anleitung (inklusive dem Öffnen der Konsole) steht in
 
 Dieses Repository ist darauf angelegt, mit der Zeit mehr als einen Kurs zu
 enthalten. Jeder bekommt unter `courses/` seine eigene Nummer, in der
-Reihenfolge, in der er entstanden ist — ein künftiger Kurs 6 landet also
-unter `courses/06-.../`, direkt neben diesen fünfen, ohne sie anzufassen.
+Reihenfolge, in der er entstanden ist — ein künftiger Kurs 7 landet also
+unter `courses/07-.../`, direkt neben diesen sechsen, ohne sie anzufassen.
 
 Kurs 1 ist die gemeinsame Grundlage, die jeder spätere Kurs voraussetzt.
-Kurs 2 bis Kurs 5 sind jeweils **unabhängige, eigenständige** Projekte, die
+Kurs 2 bis Kurs 6 sind jeweils **unabhängige, eigenständige** Projekte, die
 nur Kurs 1 voraussetzen — keiner setzt einen der anderen voraus. Wähl, was
 dich mehr reizt, in welcher Reihenfolge du willst.
 
@@ -123,15 +123,25 @@ sobald du die Bausteine dafür hast.
 |---|---|---|
 | 1 | [Einheitenumrechner](courses/05-unit-converter/de/01-einheitenumrechner.md) | Das Nachschlagetabellen-Muster, Elemente mit `document.createElement` bauen, eine Funktion verallgemeinern, indem man eine Annahme zu einem Parameter macht |
 
+### Kurs 6 – Quiz (`courses/06-quiz/`)
+
+Setzt nur Kurs 1 voraus. Ein Multiple-Choice-Quiz mit Punktestand,
+Rückmeldung zu jeder Antwort und einem Ergebnisbildschirm — und gibt dir,
+wie Kurs 5, spürbar weniger fertigen Code als die frühesten Kurse.
+
+| # | Kapitel | Was du lernst |
+|---|---|---|
+| 1 | [Quiz](courses/06-quiz/de/01-quiz.md) | Klassen als Vorlagen für Objekte, eine Liste von Fragen modellieren, aus Daten neu rendern, ein Feature in kleine benannte Funktionen aufteilen |
+
 Es kommen mit der Zeit weitere Kurse dazu; dieser Abschnitt wächst mit.
 
 ## Projektideen
 
-Sobald du Kurs 2 bis Kurs 5 abgeschlossen hast, findest du in
+Sobald du Kurs 2 bis Kurs 6 abgeschlossen hast, findest du in
 [PROJECT-IDEAS.de.md](PROJECT-IDEAS.de.md) eine sortierte Liste dessen, was
 als Nächstes gebaut werden könnte — vom naheliegenden nächsten Schritt bis zu
 etwas wirklich Ambitioniertem. Sie liegt an der Wurzel des Repositories,
-nicht innerhalb eines einzelnen Kurses, weil jede dieser Ideen der Kurs 6
+nicht innerhalb eines einzelnen Kurses, weil jede dieser Ideen der Kurs 7
 dieses Repositories werden könnte.
 
 ## Wie du diesen Kurs nutzt
@@ -145,7 +155,7 @@ dieses Repositories werden könnte.
    Ordnung — komm später zurück, wenn du magst.
 4. Innerhalb eines Kurses verwenden spätere Kapitel ausdrücklich Code aus
    früheren weiter. Über Kurse hinweg wird dagegen nichts außer Kurs 1
-   vorausgesetzt — Kurs 2 bis Kurs 5 bauen ihre jeweilige Logik bewusst
+   vorausgesetzt — Kurs 2 bis Kurs 6 bauen ihre jeweilige Logik bewusst
    von Grund auf neu, damit sich jeder davon in beliebiger Reihenfolge
    bearbeiten lässt.
 5. Links innerhalb eines Kapitels führen genau dort, wo ein neuer Begriff
@@ -181,7 +191,12 @@ courses/
     de/                        Kapiteltexte, Deutsch
     code/                      der lauffähige Einheitenumrechner (index.html, style.css, script.js)
     assets/                    Screenshots aus dem Kapitel
-  06-.../                    künftige Kurse, nach demselben Muster
+  06-quiz/                   Kurs 6 — Multiple-Choice-Quiz
+    en/                        Kapiteltexte, Englisch
+    de/                        Kapiteltexte, Deutsch
+    code/                      das lauffähige Quiz (index.html, style.css, script.js)
+    assets/                    Screenshots aus dem Kapitel
+  07-.../                    künftige Kurse, nach demselben Muster
 ```
 
 ## Mitwirken
