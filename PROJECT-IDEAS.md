@@ -1,21 +1,21 @@
 🇬🇧 English | 🇩🇪 [Deutsch](PROJECT-IDEAS.de.md)
 
-[← Back to repository overview](README.md) · Comes after: [Course 2 – Calculator Console](courses/02-calculator-console/en/01-calculator-console.md) and [Course 3 – Calculator GUI](courses/03-calculator-gui/en/01-calculator-gui.md)
+[← Back to repository overview](README.md) · Comes after: [Course 2 – Calculator Console](courses/02-calculator-console/en/01-calculator-console.md), [Course 3 – Calculator GUI](courses/03-calculator-gui/en/01-calculator-gui.md), and [Course 4 – To-Do List](courses/04-todo-list/en/01-todo-list.md)
 
 # Ideas for your next projects
 
-Courses 2 and 3 (the calculator, in the console and then with a GUI) cover
-the fundamentals in depth — variables, functions, the DOM, a first step into
-OOP. What comes after is up to you: here's a ranked list of project ideas,
-roughly ordered from "straightforward next step" to "genuinely ambitious,"
-each with the main new skills it would teach you. Pick whichever sounds the
-most fun; motivation matters more than following the order exactly. Any of
-these could become this repository's Course 4 — or just your own side
-project.
+Courses 2, 3, and 4 (the calculator, twice over, and a to-do list) cover the
+fundamentals in depth — variables, functions, the DOM, rendering data as
+HTML, a first step into OOP. What comes after is up to you: here's a ranked
+list of project ideas, roughly ordered from "straightforward next step" to
+"genuinely ambitious," each with the main new skills it would teach you.
+Pick whichever sounds the most fun; motivation matters more than following
+the order exactly. Any of these could become this repository's Course 5 —
+or just your own side project.
 
 | # | Project | New skills on top of what you know | Difficulty |
 |---|---|---|---|
-| 1 | **To-do list** — add, remove, and check off tasks on a page | Arrays, rendering a list from data, [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) so the list survives a page reload | ⭐ |
+| 1 | ~~To-do list~~ — add, remove, and check off tasks on a page | ✅ Built — see [Course 4 – To-Do List](courses/04-todo-list/en/01-todo-list.md) | ⭐ |
 | 2 | **Unit converter** — length, weight, temperature | Forms, `<select>` dropdowns, more small pure functions like `calculate` | ⭐ |
 | 3 | **Multiple-choice quiz** — questions, scoring, a result screen | Arrays of objects, a `Question` class, conditional rendering | ⭐⭐ |
 | 4 | **Memory / matching game** — flip cards, match pairs | Game state, [`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout), CSS transitions/animations | ⭐⭐ |
@@ -28,8 +28,8 @@ project.
 
 A few notes on how to read this list:
 
-- Ideas 1–4 need nothing beyond what Courses 2 and 3 already taught you —
-  same tools, new shapes of problem.
+- Ideas 2–4 need nothing beyond what Courses 2, 3, and 4 already taught you
+  — same tools, new shapes of problem.
 - Idea 5 is the natural point to leave "everything happens instantly in my
   own code" behind and start dealing with the outside world (networks are
   slow and sometimes fail — that's a skill in itself).
@@ -38,6 +38,6 @@ A few notes on how to read this list:
 - Idea 9 is deliberately *after* you've built a few things by hand: frameworks
   make the most sense once you've felt the problems they solve.
 
-Whichever you pick, the same habits from Courses 2 and 3 still apply: build the
+Whichever you pick, the same habits from Courses 2, 3, and 4 still apply: build the
 core version first, keep it simple, and only reach for the optional,
 harder version of a feature once the basic one works.

@@ -62,13 +62,13 @@ Step-by-step setup instructions (including how to open the console) are in
 
 This repository is meant to hold more than one course over time. Each one
 gets its own number under `courses/`, in the order it was written, so a
-future Course 4 lands at `courses/04-.../` alongside these three without
+future Course 5 lands at `courses/05-.../` alongside these four without
 disturbing them.
 
-Course 1 is the shared foundation every later course assumes. Courses 2 and
-3 are two **independent, standalone** projects — the same calculator idea,
-solved two different ways. Neither requires the other; pick whichever
-sounds more interesting, or do both and compare.
+Course 1 is the shared foundation every later course assumes. Courses 2, 3,
+and 4 are each **independent, standalone** projects that only assume
+Course 1 — none of them requires any of the others. Pick whichever sounds
+more interesting, in whatever order you like.
 
 ### Course 1 – Basics (`courses/01-basics/`)
 
@@ -98,15 +98,24 @@ interface.
 |---|---|---|
 | 1 | [Calculator with a GUI](courses/03-calculator-gui/en/01-calculator-gui.md) | HTML/CSS/JS basics, the DOM, events, and a gentle first step into OOP (classes) |
 
+### Course 4 – To-Do List (`courses/04-todo-list/`)
+
+Assumes Course 1 only. A to-do list with add/check-off/remove and a
+data-to-HTML rendering pattern that scales far beyond one calculator button.
+
+| # | Chapter | What you'll learn |
+|---|---|---|
+| 1 | [To-Do List](courses/04-todo-list/en/01-todo-list.md) | Object literals, arrays of objects, rendering data as HTML, `localStorage` persistence |
+
 More courses will be added over time; this section grows with them.
 
 ## Project ideas
 
-Once you've finished Courses 2 and 3, [PROJECT-IDEAS.md](PROJECT-IDEAS.md)
+Once you've finished Courses 2, 3, and 4, [PROJECT-IDEAS.md](PROJECT-IDEAS.md)
 has a ranked list of what to build next — from a straightforward next step
 to a genuinely ambitious one. It lives at the repository root, not inside a
 single course, because any of these ideas could become this repository's
-Course 4.
+Course 5.
 
 ## How to use this course
 
@@ -118,9 +127,9 @@ Course 4.
    challenge). Skipping the optional parts is completely fine — come back to
    them later if you like.
 4. Within a course, later chapters explicitly reuse code from earlier ones.
-   Across courses, nothing is assumed except Course 1 — Courses 2 and 3
-   each build their own version of the calculation logic from scratch, on
-   purpose, so either can be done first.
+   Across courses, nothing is assumed except Course 1 — Courses 2, 3, and 4
+   each build whatever logic they need from scratch, on purpose, so any of
+   them can be done first.
 5. Links inside each chapter point to the relevant [MDN Web Docs](https://developer.mozilla.org/)
    page (the standard JavaScript reference) right where a new concept shows
    up, instead of collecting them in a glossary at the end. If a term is
@@ -143,7 +152,12 @@ courses/
     de/                        chapter text, German
     code/                      the working GUI calculator (index.html, style.css, script.js)
     assets/                    screenshots used in the chapter
-  04-.../                    future courses, same pattern
+  04-todo-list/              Course 4 — to-do list
+    en/                        chapter text, English
+    de/                        chapter text, German
+    code/                      the working to-do list (index.html, style.css, script.js)
+    assets/                    screenshots used in the chapter
+  05-.../                    future courses, same pattern
 ```
 
 ## Contributing

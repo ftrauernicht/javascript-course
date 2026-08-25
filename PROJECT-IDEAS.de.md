@@ -1,22 +1,22 @@
 🇩🇪 Deutsch | 🇬🇧 [English](PROJECT-IDEAS.md)
 
-[← Zurück zur Repository-Übersicht](README.de.md) · Kommt nach: [Kurs 2 – Taschenrechner Konsole](courses/02-calculator-console/de/01-taschenrechner-konsole.md) und [Kurs 3 – Taschenrechner GUI](courses/03-calculator-gui/de/01-taschenrechner-gui.md)
+[← Zurück zur Repository-Übersicht](README.de.md) · Kommt nach: [Kurs 2 – Taschenrechner Konsole](courses/02-calculator-console/de/01-taschenrechner-konsole.md), [Kurs 3 – Taschenrechner GUI](courses/03-calculator-gui/de/01-taschenrechner-gui.md) und [Kurs 4 – To-Do-Liste](courses/04-todo-list/de/01-to-do-liste.md)
 
 # Ideen für deine nächsten Projekte
 
-Kurs 2 und Kurs 3 (der Taschenrechner, in der Konsole und dann mit GUI)
-decken die Grundlagen ausführlich ab — Variablen, Funktionen, das DOM, ein
-erster Schritt in Richtung OOP. Was danach kommt, liegt bei dir: hier ist
-eine sortierte Liste an Projektideen, grob geordnet von "naheliegender
-nächster Schritt" bis "wirklich ambitioniert", jeweils mit den wichtigsten
-neuen Fähigkeiten, die sie dir vermitteln würden. Wähl, was dir am meisten
-Spaß macht — Motivation zählt mehr als das strikte Einhalten der Reihenfolge.
-Jede dieser Ideen könnte der Kurs 4 dieses Repositories werden — oder einfach
-dein eigenes Nebenprojekt.
+Kurs 2, Kurs 3 und Kurs 4 (der Taschenrechner, zweimal, und eine To-Do-Liste)
+decken die Grundlagen ausführlich ab — Variablen, Funktionen, das DOM, Daten
+als HTML rendern, ein erster Schritt in Richtung OOP. Was danach kommt,
+liegt bei dir: hier ist eine sortierte Liste an Projektideen, grob geordnet
+von "naheliegender nächster Schritt" bis "wirklich ambitioniert", jeweils
+mit den wichtigsten neuen Fähigkeiten, die sie dir vermitteln würden. Wähl,
+was dir am meisten Spaß macht — Motivation zählt mehr als das strikte
+Einhalten der Reihenfolge. Jede dieser Ideen könnte der Kurs 5 dieses
+Repositories werden — oder einfach dein eigenes Nebenprojekt.
 
 | # | Projekt | Neue Fähigkeiten, zusätzlich zu dem, was du schon kannst | Schwierigkeit |
 |---|---|---|---|
-| 1 | **To-Do-Liste** — Aufgaben hinzufügen, entfernen und abhaken | Arrays, eine Liste aus Daten darstellen, [`localStorage`](https://developer.mozilla.org/de/docs/Web/API/Window/localStorage), damit die Liste einen Seiten-Reload übersteht | ⭐ |
+| 1 | ~~To-Do-Liste~~ — Aufgaben hinzufügen, entfernen und abhaken | ✅ Gebaut — siehe [Kurs 4 – To-Do-Liste](courses/04-todo-list/de/01-to-do-liste.md) | ⭐ |
 | 2 | **Einheitenumrechner** — Länge, Gewicht, Temperatur | Formulare, `<select>`-Dropdowns, weitere kleine reine Funktionen wie `calculate` | ⭐ |
 | 3 | **Multiple-Choice-Quiz** — Fragen, Punktestand, ein Ergebnisbildschirm | Arrays von Objekten, eine `Question`-Klasse, bedingtes Rendern | ⭐⭐ |
 | 4 | **Memory-Spiel** — Karten umdrehen, Paare finden | Spielzustand, [`setTimeout`](https://developer.mozilla.org/de/docs/Web/API/Window/setTimeout), CSS-Übergänge/Animationen | ⭐⭐ |
@@ -29,8 +29,8 @@ dein eigenes Nebenprojekt.
 
 Ein paar Anmerkungen zum Lesen dieser Liste:
 
-- Ideen 1–4 brauchen nichts über das hinaus, was Kurs 2 und Kurs 3 schon
-  vermittelt haben — dieselben Werkzeuge, neue Arten von Problemen.
+- Ideen 2–4 brauchen nichts über das hinaus, was Kurs 2, Kurs 3 und Kurs 4
+  schon vermittelt haben — dieselben Werkzeuge, neue Arten von Problemen.
 - Idee 5 ist der natürliche Punkt, um "alles passiert sofort in meinem
   eigenen Code" hinter sich zu lassen und mit der Außenwelt umzugehen
   (Netzwerke sind langsam und schlagen manchmal fehl — das ist selbst eine
@@ -41,7 +41,8 @@ Ein paar Anmerkungen zum Lesen dieser Liste:
   Frameworks ergeben am meisten Sinn, sobald man die Probleme selbst gespürt
   hat, die sie lösen.
 
-Egal wofür du dich entscheidest: Dieselben Gewohnheiten aus Kurs 2 und Kurs 3 gelten
-weiter — zuerst die Kernversion bauen, sie einfach halten, und erst dann zur
+Egal wofür du dich entscheidest: Dieselben Gewohnheiten aus Kurs 2, Kurs 3
+und Kurs 4 gelten weiter — zuerst die Kernversion bauen, sie einfach halten,
+und erst dann zur
 optionalen, schwierigeren Variante eines Features greifen, wenn die einfache
 funktioniert.
