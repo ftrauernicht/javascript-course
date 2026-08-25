@@ -149,7 +149,7 @@ Die Idee, in zwei Schritten:
    **rekursiver Abstiegs-Parser** (recursive descent parser): eine Funktion
    pro "Rangstufe" der Rechenreihenfolge, wobei jede Stufe die nächsttiefere
    aufruft und — bei Klammern — ganz nach oben zurückspringt. Hintergrund:
-   [Wikipedia – Rekursiver Abstiegsparser](https://de.wikipedia.org/wiki/Rekursiver_Abstiegsparser),
+   [Wikipedia – Parser (Abschnitt "Rekursiver Abstiegsparser")](https://de.wikipedia.org/wiki/Parser#Parser_f%C3%BCr_kontextfreie_Grammatiken),
    [MDN – Rekursion](https://developer.mozilla.org/de/docs/Glossary/Recursion).
 
 Eine vollständige, kommentierte Musterlösung liegt in
