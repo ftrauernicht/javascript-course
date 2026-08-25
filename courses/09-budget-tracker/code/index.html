@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <h1>Budget Tracker</h1>
+
+    <div id="summary">
+      <span>Balance</span>
+      <span id="balance">$0.00</span>
+    </div>
+
+    <form id="entry-form">
+      <input type="text" id="description-input" placeholder="Description" autocomplete="off" required />
+      <input type="number" id="amount-input" placeholder="Amount" step="0.01" min="0" required />
+      <select id="type-input">
+        <option value="expense">Expense</option>
+        <option value="income">Income</option>
+      </select>
+      <select id="category-input">
+        <option value="Food">Food</option>
+        <option value="Rent">Rent</option>
+        <option value="Transport">Transport</option>
+        <option value="Fun">Fun</option>
+        <option value="Other">Other</option>
+      </select>
+      <button type="submit">Add</button>
+    </form>
+
+    <ul id="entry-list"></ul>
+
+    <h2>Spending by category</h2>
+    <div id="chart"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

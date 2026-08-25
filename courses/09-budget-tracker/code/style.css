@@ -1,0 +1,142 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #eef2f7;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.app {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 24px 32px 32px;
+  width: 420px;
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1rem;
+  margin-top: 28px;
+}
+
+#summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f6fa;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+#summary span:last-child {
+  font-size: 1.4rem;
+}
+
+#entry-form {
+  display: grid;
+  grid-template-columns: 1fr 90px;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+#entry-form input,
+#entry-form select {
+  padding: 8px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#entry-form button {
+  grid-column: span 2;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #2f6fed;
+  color: white;
+  cursor: pointer;
+}
+
+#entry-form button:hover {
+  background: #2558c4;
+}
+
+#entry-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  gap: 8px;
+}
+
+.entry .description {
+  flex: 1;
+  color: #333;
+}
+
+.amount {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.amount.income {
+  color: #2e7d32;
+}
+
+.amount.expense {
+  color: #c62828;
+}
+
+.remove {
+  border: none;
+  background: none;
+  color: #999;
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.remove:hover {
+  color: #c62828;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 60px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.bar-track {
+  background: #eef2f7;
+  border-radius: 4px;
+  height: 14px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  background: #2f6fed;
+  height: 100%;
+}
+
+.bar-amount {
+  text-align: right;
+  color: #555;
+}
