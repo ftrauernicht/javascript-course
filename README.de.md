@@ -19,10 +19,17 @@ bewusste Entscheidung und zugleich eine reale Konvention: Professioneller
 Code wird unabhängig von der Teamsprache auf Englisch geschrieben, und daran
 gewöhnt man sich am besten von der ersten Zeile an.
 
-<img src="courses/03-calculator-gui/assets/empty.png" alt="Der in Kurs 3 gebaute GUI-Taschenrechner" width="240" />
+Ein paar Dinge, die du unterwegs baust, angefangen bei nichts als den
+Programmier-Grundlagen aus Kurs 1:
 
-*Der Taschenrechner, den du in Kurs 3 baust — angefangen bei nichts als den
-Programmier-Grundlagen aus Kurs 1.*
+<table>
+<tr>
+<td align="center"><img src="courses/03-calculator-gui/assets/empty.png" width="150" alt="Der in Kurs 3 gebaute GUI-Taschenrechner" /><br />Kurs 3 — Taschenrechner GUI</td>
+<td align="center"><img src="courses/04-todo-list/assets/populated.png" width="150" alt="Die in Kurs 4 gebaute To-Do-Liste" /><br />Kurs 4 — To-Do-Liste</td>
+<td align="center"><img src="courses/06-quiz/assets/correct.png" width="150" alt="Das in Kurs 6 gebaute Quiz" /><br />Kurs 6 — Quiz</td>
+<td align="center"><img src="courses/07-memory-game/assets/win.png" width="150" alt="Das in Kurs 7 gebaute Memory-Spiel" /><br />Kurs 7 — Memory-Spiel</td>
+</tr>
+</table>
 
 ## Diesen Kurs auf deinen Computer holen
 

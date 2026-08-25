@@ -18,10 +18,17 @@ and a real-world convention: professional codebases are written in English
 regardless of which language the team speaks, so it is worth getting used to
 from the very first line.
 
-<img src="courses/03-calculator-gui/assets/empty.png" alt="The GUI calculator built in Course 3" width="240" />
+A few of the things you'll build along the way, starting from nothing but
+programming basics in Course 1:
 
-*The calculator you'll build in Course 3 — starting from nothing but
-programming basics in Course 1.*
+<table>
+<tr>
+<td align="center"><img src="courses/03-calculator-gui/assets/empty.png" width="150" alt="The GUI calculator built in Course 3" /><br />Course 3 — Calculator GUI</td>
+<td align="center"><img src="courses/04-todo-list/assets/populated.png" width="150" alt="The to-do list built in Course 4" /><br />Course 4 — To-Do List</td>
+<td align="center"><img src="courses/06-quiz/assets/correct.png" width="150" alt="The quiz built in Course 6" /><br />Course 6 — Quiz</td>
+<td align="center"><img src="courses/07-memory-game/assets/win.png" width="150" alt="The memory game built in Course 7" /><br />Course 7 — Memory Game</td>
+</tr>
+</table>
 
 ## Get this course onto your computer
 
