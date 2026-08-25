@@ -1,6 +1,6 @@
 🇩🇪 Deutsch | 🇬🇧 [English](CONTRIBUTING.md)
 
-# Mitwirken bei Training - Trainee - Javascript
+# Mitwirken bei JavaScript Course
 
 Dies ist ein privates Projekt, das von einer Person gepflegt wird.
 

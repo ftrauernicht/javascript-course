@@ -1,6 +1,6 @@
 🇩🇪 Deutsch | 🇬🇧 [English](README.md)
 
-# Training – Trainee JavaScript
+# JavaScript Course
 
 Ein projektbasierter Einsteigerkurs in JavaScript, geschrieben, um Kolleginnen
 und Kollegen, angehenden Azubis und allen anderen Interessierten die
@@ -35,7 +35,7 @@ Programmier-Grundlagen aus Kurs 1:
 
 **Variante A — ganz ohne Werkzeuge, wenn du gerade erst anfängst:**
 
-1. Geh zu <https://github.com/ftrauernicht/training-trainee-javascript>.
+1. Geh zu <https://github.com/ftrauernicht/javascript-course>.
 2. Klick auf den grünen **Code**-Button → **Download ZIP**.
 3. Entpack die heruntergeladene ZIP-Datei irgendwo auf deinem Computer
    (Rechtsklick → *Alle extrahieren* unter Windows, oder Doppelklick unter
@@ -46,7 +46,7 @@ Programmier-Grundlagen aus Kurs 1:
 **Variante B — mit [Git](https://git-scm.com/), falls du es bereits installiert hast:**
 
 ```
-git clone https://github.com/ftrauernicht/training-trainee-javascript.git
+git clone https://github.com/ftrauernicht/javascript-course.git
 ```
 
 So oder so muss nichts installiert oder gebaut werden, und es braucht auch

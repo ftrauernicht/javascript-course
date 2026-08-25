@@ -1,6 +1,6 @@
 🇬🇧 English | 🇩🇪 [Deutsch](CONTRIBUTING.de.md)
 
-# Contributing to Training - Trainee - Javascript
+# Contributing to JavaScript Course
 
 This is a personal, solo-maintained project.
 
