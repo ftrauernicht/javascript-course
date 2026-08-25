@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #eef2f7;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: white;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.new-button {
+  padding: 10px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  background: #2f6fed;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.new-button:hover {
+  background: #2558c4;
+}
+
+.note-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.note-list li {
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 4px;
+}
+
+.note-list li:hover {
+  background: #f4f6fa;
+}
+
+.note-list li.selected {
+  background: #e7edfc;
+}
+
+.note-list .note-title {
+  font-weight: bold;
+  margin: 0 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-list .note-snippet {
+  font-size: 0.85rem;
+  color: #777;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.editor {
+  flex: 1;
+  padding: 24px 32px;
+}
+
+#note-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#title-input {
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  background: transparent;
+  margin-bottom: 12px;
+}
+
+#content-input {
+  flex: 1;
+  font-size: 1rem;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #e0e0e0;
+}
+
+#save-button {
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  background: #2f6fed;
+  color: white;
+  cursor: pointer;
+}
+
+#save-button:hover {
+  background: #2558c4;
+}
+
+.delete-button {
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  color: #c62828;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: #fdeaea;
+}
+
+.delete-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Notes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <button id="new-button" class="new-button">+ New note</button>
+      <ul id="note-list" class="note-list"></ul>
+    </aside>
+
+    <main class="editor">
+      <form id="note-form">
+        <input type="text" id="title-input" placeholder="Title" autocomplete="off" required />
+        <textarea id="content-input" placeholder="Write something..." rows="14"></textarea>
+        <div class="button-row">
+          <button type="submit" id="save-button">Save</button>
+          <button type="button" id="delete-button" class="delete-button">Delete</button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
