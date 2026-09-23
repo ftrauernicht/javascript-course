@@ -59,13 +59,13 @@ protocol your browser uses to load every page. Every request has:
 - Sometimes a **body** — data sent along with the request, usually JSON,
   used by `POST` and `PATCH` to say *what* to create or change.
 
-Every response has a **status code** — a 3-digit number summarizing what
+Every response has a **status code**, a 3-digit number summarizing what
 happened: `200 OK` (success), `201 Created` (a `POST` succeeded), `204 No
-Content` (success, nothing to send back — typical for `DELETE`), `400 Bad
+Content` (success, nothing to send back, typical for `DELETE`), `400 Bad
 Request` (the request itself was invalid), `404 Not Found` (no such
 resource). A **REST API** is simply a server organized around this
 method-plus-path pattern: `GET /tasks` reads every task, `GET /tasks/7`
-reads task 7, `POST /tasks` creates a task, and so on — the "REST" part is
+reads task 7, `POST /tasks` creates a task, and so on. The "REST" part is
 a set of widely-used conventions, not a technology you install.
 
 ## 🟢 Core — Setting up the project
@@ -131,15 +131,15 @@ stops it.
 A few new pieces:
 
 - [`require("express")`](https://nodejs.org/api/modules.html#requireid)
-  is Node's way of loading a library — the CommonJS equivalent of
+  is Node's way of loading a library: the CommonJS equivalent of
   `<script src="...">`, just for code instead of the browser.
 - `express()` creates the app; `app.get(path, handler)` registers a
   function to run for `GET` requests matching `path`. `req` (the incoming
   request) and `res` (the tools to answer it) are provided automatically.
-- `res.json(...)` sends its argument back as a JSON response — the server
+- `res.json(...)` sends its argument back as a JSON response, the server
   equivalent of `JSON.stringify(...)`, handled for you.
 - `app.use(express.json())` tells Express to automatically parse a JSON
-  request body into `req.body` for every route below it — without this
+  request body into `req.body` for every route below it; without this
   line, `req.body` would be `undefined` even when a request sends JSON.
 - `app.listen(PORT, callback)` starts the server listening for real
   network connections on that port, then runs `callback` once it's ready.
@@ -192,16 +192,16 @@ app.get("/tasks/:id", (req, res) => {
 - [`crypto.randomUUID()`](https://nodejs.org/api/crypto.html#cryptorandomuuid)
   is built into Node and generates a unique id string every time it's
   called. Earlier browser courses used an item's position in the array as
-  its identity (`data-index`) — that stops working once items can be
+  its identity (`data-index`). That stops working once items can be
   created and deleted out of order on a server other programs are also
   talking to, so tasks get their own permanent `id` instead, independent
   of array position.
-- `:id` in `"/tasks/:id"` is a **route parameter** — a placeholder that
+- `:id` in `"/tasks/:id"` is a **route parameter**: a placeholder that
   matches anything in that position of the path (`/tasks/abc-123` makes
   `req.params.id` equal `"abc-123"`). `.find(...)` (the same array method
   from earlier courses) locates the matching task.
 - `res.status(404).json(...)` sets the response's status code before
-  sending its body — without an explicit `.status(...)` call, Express
+  sending its body; without an explicit `.status(...)` call, Express
   defaults to `200`, which would be a lie for "not found."
 
 Restart the server (`Ctrl+C`, then `node server.js` again) and try both:
@@ -221,7 +221,7 @@ Your turn. `app.post("/tasks", (req, res) => { ... })` should:
    `return`.
 2. Otherwise, build a new task object — `{ id: crypto.randomUUID(), text:
    <the trimmed text>, done: false }` — and `.push(...)` it onto `tasks`.
-3. Respond with `res.status(201).json(newTask)` — `201 Created`, with the
+3. Respond with `res.status(201).json(newTask)`: `201 Created`, with the
    new task (including its generated `id`) in the body, so whoever sent
    the request knows what id to use next.
 
@@ -240,7 +240,7 @@ curl -X POST http://localhost:3000/tasks -H "Content-Type: application/json" -d 
 `-X POST` sets the method, `-H` adds the header telling the server the
 body is JSON (that's what `express.json()` looks for), and `-d` is the
 body itself. You should get back a `201` response with your new task,
-`id` included — and `curl http://localhost:3000/tasks` afterward should
+`id` included; afterward, `curl http://localhost:3000/tasks` should
 show it in the full list.
 
 ## 🟢 Core — Updating a task
@@ -252,10 +252,10 @@ lookup as `GET /tasks/:id` above:
    If there's no match, respond `404` the same way and `return`.
 2. If `req.body.text` isn't `undefined`, set `task.text` to it. If
    `req.body.done` isn't `undefined`, set `task.done` to it. (Checking
-   for `undefined` rather than just truthiness matters here — `done:
+   for `undefined` rather than just truthiness matters here: `done:
    false` is a valid value to set, and a falsy check would silently
    ignore it.)
-3. Respond with `res.json(task)` — the updated task, status `200` by
+3. Respond with `res.json(task)`: the updated task, status `200` by
    default.
 
 ```js
@@ -265,7 +265,7 @@ app.patch("/tasks/:id", (req, res) => {
 ```
 
 `PATCH` (change *part* of something) is deliberately different from `PUT`
-(replace the whole thing) — this handler only touches the fields the
+(replace the whole thing); this handler only touches the fields the
 request actually sent, which is why both checks are against `undefined`
 specifically. Test marking a task done:
 
@@ -292,10 +292,10 @@ app.delete("/tasks/:id", (req, res) => {
 ```
 
 [`.findIndex(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
-is `.find(...)`'s sibling — it returns the matching item's position (or
+is `.find(...)`'s sibling: it returns the matching item's position (or
 `-1` if nothing matched) instead of the item itself, which `.splice(...)`
 needs to remove it. `res.status(204).end()` sends a response with no body
-at all — `204 No Content` means "it worked, there's nothing to tell you,"
+at all. `204 No Content` means "it worked, there's nothing to tell you,"
 so there's nothing to `.json(...)`.
 
 Test it, then confirm with a `GET` that it's really gone (a `404` this
@@ -312,7 +312,7 @@ Add support for `GET /tasks?done=true` (and `?done=false`) returning only
 matching tasks, full list unfiltered when the query string is absent.
 Inside the existing `GET /tasks` handler, `req.query.done` holds the
 query string's `done` value as a **string** (`"true"` or `"false"`, never
-a real boolean) when present, `undefined` when it isn't — filter `tasks`
+a real boolean) when present, `undefined` when it isn't; filter `tasks`
 with `.filter(...)` accordingly before calling `res.json(...)`.
 
 ## 🔴 Optional, genuine challenge — Save tasks to a file
@@ -326,8 +326,8 @@ hardcoded two-task array (`fs.existsSync("tasks.json")` to check whether
 the file exists yet, then `JSON.parse(fs.readFileSync("tasks.json",
 "utf-8"))` to read it). This is the same "turn data into text to store
 it, parse it back on the way in" idea as `localStorage` in earlier
-courses — just a real file on disk instead of the browser's storage, and
-the reason a genuinely serious app reaches for an actual database
+courses. Here it's a real file on disk instead of the browser's storage,
+and it's the reason a serious app reaches for an actual database
 instead, which is exactly where [PROJECT-IDEAS.md](../../../PROJECT-IDEAS.md)'s
 next idea goes.
 
@@ -336,7 +336,7 @@ next idea goes.
 - Running JavaScript as a standalone program with Node.js, outside any
   browser
 - `npm` and `package.json` to declare and install a dependency
-- HTTP methods, paths, status codes, and JSON bodies — the vocabulary any
+- HTTP methods, paths, status codes, and JSON bodies: the vocabulary any
   REST API is built from
 - Express: `app.get`/`.post`/`.patch`/`.delete`, route parameters
   (`:id`), `req.body`, `req.params`, and `res.status(...).json(...)`
@@ -347,5 +347,5 @@ next idea goes.
 ## What's next
 
 This course stands on its own. For a broader menu of what to build next
-— including connecting a frontend to a server exactly like this one, with
-a real database behind it — see [PROJECT-IDEAS.md](../../../PROJECT-IDEAS.md).
+(including connecting a frontend to a server exactly like this one, with
+a real database behind it), see [PROJECT-IDEAS.md](../../../PROJECT-IDEAS.md).

@@ -63,15 +63,15 @@ Anfrage hat:
   werden, meist JSON, genutzt von `POST` und `PATCH`, um zu sagen, *was*
   erstellt oder geändert werden soll.
 
-Jede Antwort hat einen **Statuscode** — eine dreistellige Zahl, die
+Jede Antwort hat einen **Statuscode**, eine dreistellige Zahl, die
 zusammenfasst, was passiert ist: `200 OK` (Erfolg), `201 Created` (ein
 `POST` war erfolgreich), `204 No Content` (Erfolg, nichts zum
-Zurückschicken — typisch für `DELETE`), `400 Bad Request` (die Anfrage
+Zurückschicken, typisch für `DELETE`), `400 Bad Request` (die Anfrage
 selbst war ungültig), `404 Not Found` (keine solche Ressource). Eine
 **REST-API** ist einfach ein Server, der um dieses
 Methode-plus-Pfad-Muster herum organisiert ist: `GET /tasks` liest jede
 Aufgabe, `GET /tasks/7` liest Aufgabe 7, `POST /tasks` erstellt eine
-Aufgabe, und so weiter — der "REST"-Teil ist eine Sammlung weit
+Aufgabe, und so weiter. Der "REST"-Teil ist eine Sammlung weit
 verbreiteter Konventionen, keine Technologie, die man installiert.
 
 ## 🟢 Kern — Das Projekt einrichten
@@ -139,16 +139,16 @@ nicht fertig zu werden. `Strg+C` in diesem Terminal stoppt ihn.
 Ein paar neue Dinge:
 
 - [`require("express")`](https://nodejs.org/api/modules.html#requireid)
-  ist Nodes Art, eine Bibliothek zu laden — das CommonJS-Gegenstück zu
+  ist Nodes Art, eine Bibliothek zu laden: das CommonJS-Gegenstück zu
   `<script src="...">`, nur für Code statt für den Browser.
 - `express()` erstellt die App; `app.get(path, handler)` registriert eine
   Funktion, die für `GET`-Anfragen läuft, die zu `path` passen. `req`
   (die eingehende Anfrage) und `res` (die Werkzeuge, um sie zu
   beantworten) werden automatisch bereitgestellt.
-- `res.json(...)` schickt sein Argument als JSON-Antwort zurück — das
+- `res.json(...)` schickt sein Argument als JSON-Antwort zurück, das
   Server-Gegenstück zu `JSON.stringify(...)`, für dich erledigt.
 - `app.use(express.json())` sagt Express, den JSON-Body einer Anfrage
-  automatisch in `req.body` einzulesen, für jede Route darunter — ohne
+  automatisch in `req.body` einzulesen, für jede Route darunter; ohne
   diese Zeile wäre `req.body` `undefined`, selbst wenn eine Anfrage JSON
   schickt.
 - `app.listen(PORT, callback)` lässt den Server auf echte
@@ -204,17 +204,17 @@ app.get("/tasks/:id", (req, res) => {
 - [`crypto.randomUUID()`](https://nodejs.org/api/crypto.html#cryptorandomuuid)
   ist in Node eingebaut und erzeugt bei jedem Aufruf eine neue, eindeutige
   Id-Zeichenkette. Frühere Browser-Kurse haben die Position eines
-  Elements im Array als seine Identität genutzt (`data-index`) — das
+  Elements im Array als seine Identität genutzt (`data-index`). Das
   funktioniert nicht mehr, sobald Elemente in beliebiger Reihenfolge
   erstellt und gelöscht werden können, auf einem Server, mit dem auch
   andere Programme sprechen, daher bekommen Aufgaben stattdessen ihre
   eigene dauerhafte `id`, unabhängig von der Position im Array.
-- `:id` in `"/tasks/:id"` ist ein **Routen-Parameter** — ein Platzhalter,
+- `:id` in `"/tasks/:id"` ist ein **Routen-Parameter**: ein Platzhalter,
   der auf alles an dieser Stelle im Pfad passt (`/tasks/abc-123` macht
   `req.params.id` gleich `"abc-123"`). `.find(...)` (dieselbe
   Array-Methode aus früheren Kursen) findet die passende Aufgabe.
 - `res.status(404).json(...)` setzt den Statuscode der Antwort, bevor ihr
-  Body verschickt wird — ohne einen expliziten `.status(...)`-Aufruf
+  Body verschickt wird; ohne einen expliziten `.status(...)`-Aufruf
   nutzt Express standardmäßig `200`, was für "nicht gefunden" gelogen
   wäre.
 
@@ -237,7 +237,7 @@ Jetzt bist du dran. `app.post("/tasks", (req, res) => { ... })` soll:
 2. Andernfalls ein neues Aufgaben-Objekt bauen — `{ id:
    crypto.randomUUID(), text: <der getrimmte Text>, done: false }` — und
    es mit `.push(...)` auf `tasks` legen.
-3. Mit `res.status(201).json(newTask)` antworten — `201 Created`, mit der
+3. Mit `res.status(201).json(newTask)` antworten: `201 Created`, mit der
    neuen Aufgabe (samt ihrer generierten `id`) im Body, damit weiß, wer
    die Anfrage geschickt hat, mit welcher Id als Nächstes gearbeitet
    werden kann.
@@ -257,8 +257,8 @@ curl -X POST http://localhost:3000/tasks -H "Content-Type: application/json" -d 
 `-X POST` setzt die Methode, `-H` fügt den Header hinzu, der dem Server
 sagt, dass der Body JSON ist (genau danach sucht `express.json()`), und
 `-d` ist der Body selbst. Du solltest eine `201`-Antwort mit deiner neuen
-Aufgabe zurückbekommen, `id` inklusive — und `curl
-http://localhost:3000/tasks` danach sollte sie in der vollständigen Liste
+Aufgabe zurückbekommen, `id` inklusive; `curl
+http://localhost:3000/tasks` sollte sie danach in der vollständigen Liste
 zeigen.
 
 ## 🟢 Kern — Eine Aufgabe ändern
@@ -271,10 +271,10 @@ Nachschlage-Muster wie `GET /tasks/:id` oben:
    `return`.
 2. Ist `req.body.text` nicht `undefined`, setz `task.text` darauf. Ist
    `req.body.done` nicht `undefined`, setz `task.done` darauf. (Auf
-   `undefined` zu prüfen statt nur auf Wahrheitswert ist hier wichtig —
+   `undefined` zu prüfen statt nur auf Wahrheitswert ist hier wichtig:
    `done: false` ist ein gültiger Wert zum Setzen, und eine
    Falsy-Prüfung würde ihn stillschweigend ignorieren.)
-3. Mit `res.json(task)` antworten — die aktualisierte Aufgabe, Status
+3. Mit `res.json(task)` antworten: die aktualisierte Aufgabe, Status
    `200` standardmäßig.
 
 ```js
@@ -284,7 +284,7 @@ app.patch("/tasks/:id", (req, res) => {
 ```
 
 `PATCH` (*einen Teil* von etwas ändern) unterscheidet sich bewusst von
-`PUT` (das Ganze ersetzen) — dieser Handler fasst nur die Felder an, die
+`PUT` (das Ganze ersetzen); dieser Handler fasst nur die Felder an, die
 die Anfrage tatsächlich mitgeschickt hat, deshalb prüfen beide gezielt
 gegen `undefined`. Testen, eine Aufgabe als erledigt zu markieren:
 
@@ -312,10 +312,10 @@ app.delete("/tasks/:id", (req, res) => {
 ```
 
 [`.findIndex(...)`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
-ist das Geschwister von `.find(...)` — es gibt die Position des
+ist das Geschwister von `.find(...)`: es gibt die Position des
 passenden Elements zurück (oder `-1`, wenn nichts passt) statt des
 Elements selbst, was `.splice(...)` braucht, um es zu entfernen.
-`res.status(204).end()` schickt eine Antwort ganz ohne Body — `204 No
+`res.status(204).end()` schickt eine Antwort ganz ohne Body. `204 No
 Content` bedeutet "es hat geklappt, es gibt nichts mitzuteilen", also
 gibt es nichts für `.json(...)`.
 
@@ -334,7 +334,7 @@ das nur passende Aufgaben zurückgibt, volle Liste ungefiltert, wenn der
 Query-String fehlt. Innerhalb des bestehenden `GET /tasks`-Handlers hält
 `req.query.done` den `done`-Wert des Query-Strings als **Zeichenkette**
 (`"true"` oder `"false"`, nie ein echter Boolean), wenn vorhanden,
-`undefined`, wenn nicht — filter `tasks` entsprechend mit `.filter(...)`,
+`undefined`, wenn nicht; filter `tasks` entsprechend mit `.filter(...)`,
 bevor du `res.json(...)` aufrufst.
 
 ## 🔴 Optional, echte Herausforderung — Aufgaben in eine Datei speichern
@@ -349,9 +349,9 @@ zu prüfen, ob die Datei schon existiert, dann
 `JSON.parse(fs.readFileSync("tasks.json", "utf-8"))`, um sie zu lesen).
 Das ist dieselbe "Daten in Text verwandeln, um sie zu speichern, beim
 Reinlesen wieder einlesen"-Idee wie bei `localStorage` in früheren
-Kursen — nur eine echte Datei auf der Festplatte statt des
-Browser-Speichers, und genau der Grund, warum eine wirklich ernsthafte
-App stattdessen zu einer echten Datenbank greift, was genau dorthin
+Kursen. Hier ist es eine echte Datei auf der Festplatte statt des
+Browser-Speichers, und genau der Grund, warum eine ernsthafte App
+stattdessen zu einer echten Datenbank greift, was genau dorthin
 führt, wo die nächste Idee in
 [PROJECT-IDEAS.de.md](../../../PROJECT-IDEAS.de.md) hingeht.
 
@@ -361,7 +361,7 @@ führt, wo die nächste Idee in
   jedes Browsers
 - `npm` und `package.json`, um eine Abhängigkeit zu deklarieren und zu
   installieren
-- HTTP-Methoden, Pfade, Statuscodes und JSON-Bodys — das Vokabular, aus
+- HTTP-Methoden, Pfade, Statuscodes und JSON-Bodys: das Vokabular, aus
   dem jede REST-API gebaut ist
 - Express: `app.get`/`.post`/`.patch`/`.delete`, Routen-Parameter
   (`:id`), `req.body`, `req.params`, und `res.status(...).json(...)`
@@ -372,6 +372,6 @@ führt, wo die nächste Idee in
 ## Was als Nächstes kommt
 
 Dieser Kurs steht für sich. Für eine größere Auswahl, was als Nächstes zu
-bauen wäre — inklusive ein Frontend mit einem Server genau wie diesem zu
-verbinden, mit einer echten Datenbank dahinter —, siehe
+bauen wäre (inklusive ein Frontend mit einem Server genau wie diesem zu
+verbinden, mit einer echten Datenbank dahinter), siehe
 [PROJECT-IDEAS.de.md](../../../PROJECT-IDEAS.de.md).
