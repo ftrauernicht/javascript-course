@@ -1,6 +1,6 @@
 🇬🇧 English | 🇩🇪 [Deutsch](../de/01-quiz.md)
 
-[← Back to course overview](../../../README.md) · Related: [Course 3 – Calculator GUI](../../03-calculator-gui/en/01-calculator-gui.md), [Course 4 – To-Do List](../../04-todo-list/en/01-todo-list.md), [Course 5 – Unit Converter](../../05-unit-converter/en/01-unit-converter.md) (none required — if you've done any of them, some of the pieces below will feel familiar)
+[← Back to course overview](../../../README.md) · Related: [Course 3 – Calculator GUI](../../03-calculator-gui/en/01-calculator-gui.md), [Course 4 – To-Do List](../../04-todo-list/en/01-todo-list.md), [Course 5 – Unit Converter](../../05-unit-converter/en/01-unit-converter.md) (none required; if you've done any of them, some of the pieces below will feel familiar)
 
 # Chapter 1 – Quiz
 
@@ -13,13 +13,13 @@ nothing else; it stands entirely on its own.
 
 The finished reference files live in
 [`courses/06-quiz/code/`](../code/): `index.html`, `style.css`,
-`script.js`. `index.html` and `style.css` are ready to use as they are —
+`script.js`. `index.html` and `style.css` are ready to use as they are:
 they already include everything this chapter builds, including the
 optional parts further down. `script.js` is the actual exercise: copy all
 three files into your own working folder, empty out your copy of
 `script.js`, and build it back up one piece at a time. Like
 [Course 5](../../05-unit-converter/en/01-unit-converter.md), this chapter
-holds back more of the finished code than the earliest courses did — you
+holds back more of the finished code than the earliest courses did. You
 get the new building blocks explained, and you assemble the actual logic
 yourself.
 
@@ -51,12 +51,12 @@ Here's the finished result you're working towards:
 
 Two things worth noticing:
 
-- `#options-list` starts empty on purpose — JavaScript fills it with one
+- `#options-list` starts empty on purpose: JavaScript fills it with one
   `<button>` per answer, built from data, exactly like Course 4's task
   list or Course 5's dropdowns filled themselves in.
 - `#result-screen` has a `class="hidden"` from the start, and `.hidden`
   is just a CSS class in [`style.css`](../code/style.css) that sets
-  `display: none;`. There's no special browser feature here — showing or
+  `display: none;`. There's no special browser feature here. Showing or
   hiding a whole section of the page is just adding or removing an
   ordinary class, the same way `task.done` added a `done` class in
   Course 4.
@@ -65,8 +65,8 @@ See the full version in [`index.html`](../code/index.html) and
 [`style.css`](../code/style.css); the styling isn't the focus here, so
 feel free to just skim it.
 
-From here on, everything goes into `script.js` — that's the file
-`index.html` actually loads. Start it with:
+From here on, everything goes into `script.js`, the file `index.html`
+actually loads. Start it with:
 
 ```js
 const questionScreen = document.getElementById("question-screen");
@@ -81,34 +81,34 @@ const restartButton = document.getElementById("restart-button");
 
 ## 🟢 Core — The DOM, in short
 
-*(If you've done Course 3, 4, or 5, all of this will be familiar — skip
+*(If you've done Course 3, 4, or 5, all of this will be familiar. Skip
 ahead to the next section.)*
 
-JavaScript doesn't see your HTML tags directly — it sees the **DOM**
-(Document Object Model), the browser's live, in-memory representation of
-the page. This chapter needs a handful of DOM tools:
+JavaScript doesn't see your HTML tags directly. Instead, it sees the
+**DOM** (Document Object Model), the browser's live, in-memory
+representation of the page. This chapter needs a handful of DOM tools:
 
 - [`document.getElementById(...)`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
-  finds one element by its `id` — that's what the lines above just did.
+  finds one element by its `id`; that's what the lines above just did.
 - [`document.querySelectorAll(...)`](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
   finds *every* matching element for a CSS-style selector, as a list you
   can loop over with
-  [`.forEach(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) —
+  [`.forEach(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach),
   used below to handle every answer button at once, however many there
   are.
 - [`addEventListener("click", ...)`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
   says "run this function whenever this event happens on this element."
 - [`.classList.add(...)`/`.classList.remove(...)`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
   add or remove a single CSS class from an element without disturbing any
-  others it already has — how the `.hidden` class above gets toggled, and
-  how an answer button gets marked `.correct` or `.wrong`.
+  others it already has. That's how the `.hidden` class above gets
+  toggled, and how an answer button gets marked `.correct` or `.wrong`.
 - `.dataset` reads a `data-*` attribute back out of an element (always as
-  a string) — the same custom-data-attribute idea from Course 3 or 4, used
+  a string), the same custom-data-attribute idea from Course 3 or 4, used
   below to know which option index a clicked button represents.
 
 ## 🟢 Core — Classes, in short
 
-*(If you've done Course 3, all of this will be familiar — skip ahead to
+*(If you've done Course 3, all of this will be familiar. Skip ahead to
 the next section.)*
 
 A **class** is a template for creating objects that all share the same
@@ -133,15 +133,15 @@ class Question {
 - The [`constructor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
   runs whenever you create a new question, and sets up its data.
 - [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
-  refers to "the specific question object being built or used right now"
-  — `this.text = text` stores the argument on that particular object.
+  refers to "the specific question object being built or used right now".
+  `this.text = text` stores the argument on that particular object.
 - `isCorrect(...)` is a **method**: a function that lives on the class and
   can use `this` to look at the object's own data. Every question you
   create gets its own copy of the data, but shares the same `isCorrect`
   logic.
-- `new Question("...", [...], 1)` — the
+- `new Question("...", [...], 1)`, built with the
   [`new`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new)
-  keyword — creates one actual question object using that template.
+  keyword, creates one actual question object using that template.
 
 More: [MDN – Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes).
 
@@ -159,7 +159,7 @@ let score = 0;
 let answered = false;
 ```
 
-Feel free to write your own questions instead of copying these — the
+Feel free to write your own questions instead of copying these. The
 `correctIndex` is just the position (starting at 0) of the right answer in
 the `options` array. `answered` tracks whether the current question has
 already been clicked, so a second click on another option doesn't change
@@ -200,7 +200,7 @@ question is on screen as soon as the page loads.
 ## 🟢 Core — Checking an answer
 
 This is where you take over. `handleAnswer(selectedIndex)` runs when a
-player clicks one of the option buttons — `selectedIndex` is whichever
+player clicks one of the option buttons; `selectedIndex` is whichever
 one they clicked. It needs to:
 
 1. Do nothing if this question has already been answered (check
@@ -267,8 +267,8 @@ replaying doesn't mean memorizing option positions instead of answers.
 The result screen's `<ul id="review-list"></ul>` is there for this:
 after the quiz ends, list every question again, showing what you
 answered and what the correct answer actually was. You'll need to start
-remembering each answer as it happens — e.g. an `answers` array that
-`handleAnswer` `.push()`es `{ question, selectedIndex, isCorrect }` onto —
+remembering each answer as it happens: e.g. an `answers` array that
+`handleAnswer` `.push()`es `{ question, selectedIndex, isCorrect }` onto,
 and then, in `showResult()`, build the review list's HTML from that array
 using the same `.map(...)`/`.join(...)` pattern `renderQuestion()` already
 uses for options. `courses/06-quiz/code/script.js` has one working
@@ -291,7 +291,7 @@ Finish all the questions to see your score and a review of every answer:
 ![The result screen showing a score of 4 out of 5, with a per-question review](../assets/result.png)
 
 Open [`courses/06-quiz/code/index.html`](../code/index.html) in your
-browser — double-clicking the file works fine, since everything is local
+browser. Double-clicking the file works fine, since everything is local
 with no external requests.
 
 ## Checkpoint & what you learned
