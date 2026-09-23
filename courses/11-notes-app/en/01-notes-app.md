@@ -5,16 +5,16 @@
 # Chapter 1 – Full-Stack Notes App
 
 **Goal:** build a notes app with a real, persistent database behind
-it — your own frontend, in the same browser tab, talking to your own
+it: your own frontend, in the same browser tab, talking to your own
 backend, which stores every note in an actual SQLite database file
 instead of memory or `localStorage`. This is the first course that
 connects everything earlier courses built separately: a browser UI, a
-server, and now real, permanent storage. This course assumes
-[Course 1 – Basics](../../01-basics/en/00-introduction.md) only (values,
-variables, operators, brackets, functions, conditionals, loops) and
-nothing else; it stands entirely on its own, though it moves fast
-through territory [Course 8](../../08-weather-app/en/01-weather-app.md)
-and [Course 10](../../10-rest-api/en/01-rest-api.md) each covered slowly.
+server, and now real, permanent storage. The only prerequisite is
+[Course 1 – Basics](../../01-basics/en/00-introduction.md) (values,
+variables, operators, brackets, functions, conditionals, loops); it
+stands entirely on its own, though it moves fast through territory
+[Course 8](../../08-weather-app/en/01-weather-app.md) and
+[Course 10](../../10-rest-api/en/01-rest-api.md) each covered slowly.
 
 The finished reference files live in
 [`courses/11-notes-app/code/`](../code/): `package.json`, `db.js`,
@@ -28,7 +28,7 @@ those two files, and build them back up one piece at a time. As in
 left for you to assemble from described steps, not handed to you fully
 written.
 
-Like Course 10, this needs [Node.js](https://nodejs.org/) installed — if
+Like Course 10, this needs [Node.js](https://nodejs.org/) installed. If
 you did that course already, you're set; otherwise see its "Before you
 start" section.
 
@@ -38,13 +38,14 @@ One Express server does two jobs at once here: it answers API requests
 (`/api/notes`, exactly like Course 10's `/tasks`) *and* it serves the
 frontend's HTML/CSS/JS files as plain static files. Both come from the
 same origin (`http://localhost:3000`), which sidesteps an entire problem
-— [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+that a separately-hosted frontend and backend would otherwise force you
+to deal with on day one:
+[CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 (Cross-Origin Resource Sharing), the browser's security rule that blocks
-a page from freely calling an API on a different origin — that a
-separately-hosted frontend and backend would otherwise force you to deal
-with on day one. That's also why the frontend code lives in its own
-`public/` folder: Express serves everything in that folder directly, at
-the root URL, and nothing outside it.
+a page from freely calling an API on a different origin. That's also why
+the frontend code lives in its own `public/` folder: Express serves
+everything in that folder directly, at the root URL, and nothing outside
+it.
 
 ## 🟢 Core — Project setup
 
@@ -71,7 +72,7 @@ npm install
 ## 🟢 Core — HTTP and Express, in short
 
 *(If you've done [Course 10](../../10-rest-api/en/01-rest-api.md), skip
-ahead — this is the same ground, faster.)*
+ahead: this is the same ground, faster.)*
 
 An HTTP request has a **method** (`GET` reads, `POST` creates, `PATCH`
 changes part of something, `DELETE` removes) and a **path** (`/api/notes`,
@@ -89,12 +90,12 @@ JSON request body into `req.body`. `res.json(...)` sends a JSON response;
 
 Every course so far that needed to remember something used either
 `localStorage` (a browser feature, only for that one browser) or a plain
-array in server memory (Course 10 — gone the moment the server
+array in server memory (Course 10, gone the moment the server
 restarts). A **database** is neither: a real file on disk, built for
 storing and querying structured data, that survives restarts and can
 handle far more data than fits comfortably in memory.
 [SQLite](https://www.sqlite.org/) stores an entire database as a single
-file, and — unlike most databases — needs no separate server process
+file, and, unlike most databases, needs no separate server process
 running. Even better: recent Node.js versions ship SQLite support
 **built in**, so unlike Express, there's nothing to `npm install` for it
 at all.
@@ -115,21 +116,21 @@ db.exec(`
 ```
 
 `new DatabaseSync("notes.db")` opens that file (creating it if it doesn't
-exist yet) — everything from here on reads from and writes to it
+exist yet). From here on, everything reads from and writes to it
 directly, on disk. [SQL](https://developer.mozilla.org/en-US/docs/Glossary/SQL)
 (Structured Query Language) is its own small language for describing
-data and questions about it, not JavaScript — `CREATE TABLE IF NOT
+data and questions about it, not JavaScript. `CREATE TABLE IF NOT
 EXISTS notes (...)` describes a **table** named `notes`: rows of data,
 each shaped the same way, one **column** per piece of information.
 `id INTEGER PRIMARY KEY AUTOINCREMENT` is a number that uniquely
-identifies each row and fills itself in automatically — the database
+identifies each row and fills itself in automatically (the database
 equivalent of Course 10's `crypto.randomUUID()`, just sequential integers
-instead of random strings. `TEXT NOT NULL` means "required text";
+instead of random strings). `TEXT NOT NULL` means "required text";
 `DEFAULT ''` gives `content` an empty string when none is provided.
-`IF NOT EXISTS` means this is safe to run every time the server starts —
+`IF NOT EXISTS` means this is safe to run every time the server starts:
 it only actually creates the table the first time.
 
-The rest of `db.js` is given to you in full — SQL is new territory this
+The rest of `db.js` is given to you in full. SQL is new territory this
 chapter, worth seeing completely worked out rather than reconstructed
 from steps:
 
@@ -169,11 +170,11 @@ module.exports = { getAllNotes, getNote, createNote, updateNote, deleteNote };
 ```
 
 Four SQL statements, one per job: `SELECT` reads rows (`*` means "every
-column"; `ORDER BY updated_at DESC` sorts newest-edited-first — the same
+column"; `ORDER BY updated_at DESC` sorts newest-edited-first, the same
 idea as `.sort(...)` from
 [Course 9](../../09-budget-tracker/en/01-budget-tracker.md), done by the
 database instead of JavaScript), `INSERT` adds a row, `UPDATE` changes
-one, `DELETE` removes one — both `UPDATE` and `DELETE` use `WHERE id = ?`
+one, `DELETE` removes one. Both `UPDATE` and `DELETE` use `WHERE id = ?`
 to target exactly one row, the same role `req.params.id` plays in
 Course 10's routes. `db.prepare(sql)` compiles the SQL once;
 `.get(...)`/`.all(...)`/`.run(...)` then execute it with real values
@@ -183,10 +184,10 @@ The placeholders matter for more than convenience: never build a SQL
 string by gluing user input directly into it (`"SELECT * FROM notes
 WHERE id = " + id`, say). A title or content field containing something
 like `'; DROP TABLE notes; --` could then be interpreted as *more SQL*
-instead of plain text — an attack called
+instead of plain text, an attack called
 [SQL injection](https://developer.mozilla.org/en-US/docs/Glossary/SQL_Injection).
 Placeholders keep values as values, never as code, no matter what's
-inside them — always use them for anything that came from a request.
+inside them. Always use them for anything that came from a request.
 
 ## 🟢 Core — The API: reading notes
 
@@ -220,7 +221,7 @@ app.get("/api/notes/:id", (req, res) => {
 ```
 
 `express.static(...)` is what turns the `public/` folder into the
-frontend — any file in there (`index.html`, `style.css`, `script.js`) is
+frontend: any file in there (`index.html`, `style.css`, `script.js`) is
 served directly at its path, and Express is smart enough to serve
 `index.html` automatically for the root `/`. The two `GET` routes are
 exactly Course 10's pattern, just calling `db.js`'s functions instead of
@@ -228,7 +229,7 @@ searching an in-memory array.
 
 ## 🟢 Core — The API: writing notes
 
-Your turn — same pattern as Course 10's `POST`/`PATCH`, hitting a real
+Your turn: same pattern as Course 10's `POST`/`PATCH`, hitting a real
 database this time. `app.post("/api/notes", (req, res) => { ... })`
 should:
 
@@ -250,7 +251,7 @@ app.post("/api/notes", (req, res) => {
    `return`.
 2. Work out the new `title` (`req.body.title.trim()` if it was sent,
    otherwise the existing note's title) and `content` (`req.body.content`
-   if sent, otherwise the existing content) — check each with `!==
+   if sent, otherwise the existing content), checking each with `!==
    undefined`, the same reasoning Course 10 used: `content: ""` is a
    valid value to set, and a plain truthiness check would wrongly skip it.
 3. Call `notes.updateNote(req.params.id, title, content)` and respond
@@ -262,7 +263,7 @@ app.patch("/api/notes/:id", (req, res) => {
 });
 ```
 
-This one's given — same shape a third time:
+This one's given, same shape a third time:
 
 ```js
 app.delete("/api/notes/:id", (req, res) => {
@@ -282,7 +283,7 @@ app.listen(PORT, () => {
 });
 ```
 
-Save, run `node server.js`, and open `http://localhost:3000` — the page
+Save, run `node server.js`, and open `http://localhost:3000`; the page
 loads (served by `express.static`), and
 `curl -X POST http://localhost:3000/api/notes -H "Content-Type: application/json" -d "{\"title\":\"Test\"}"`
 in a second terminal should create a note and print it back with a
@@ -305,8 +306,8 @@ is the by-now-familiar rendering pattern.
 
 The HTML ([`public/index.html`](../code/public/index.html)) is a
 two-pane layout: a sidebar `#note-list` and an editor form with
-`#title-input`, `#content-input`, `#save-button`, and `#delete-button` —
-read the full file, it's given to you as-is, along with
+`#title-input`, `#content-input`, `#save-button`, and `#delete-button`.
+Read the full file; it's given to you as-is, along with
 [`style.css`](../code/public/style.css). Start `public/script.js` with:
 
 ```js
@@ -322,9 +323,9 @@ let currentId = null;
 ```
 
 `currentId` tracks which note (if any) is currently loaded into the
-editor — `null` means "a new, unsaved note."
+editor: `null` means "a new, unsaved note."
 
-These two are given — loading and rendering, the established pattern:
+These two are given, loading and rendering, the established pattern:
 
 ```js
 async function loadNotes() {
@@ -383,8 +384,8 @@ newButton.addEventListener("click", clearForm);
 
 This is the actual point of the chapter: `handleSave(event)`, called on
 the form's `"submit"` event, needs to decide whether it's creating a new
-note or updating an existing one — the one decision nothing so far has
-had to make.
+note or updating an existing one. It's the one decision nothing so far
+has had to make.
 
 1. Call `event.preventDefault()`.
 2. Read `titleInput.value.trim()` and `contentInput.value`. If the title
@@ -394,7 +395,7 @@ had to make.
    note back out of the response with `.json()`, and set `currentId` to
    its `id`.
 4. Otherwise (editing an existing note): `PATCH`
-   `/api/notes/" + currentId` with the same kind of JSON body — no need
+   `/api/notes/" + currentId` with the same kind of JSON body; no need
    to read the response this time.
 5. Either way, finish with `await loadNotes()` so the sidebar reflects
    what's now actually in the database.
@@ -409,7 +410,7 @@ noteForm.addEventListener("submit", handleSave);
 
 `handleDelete()`, called by the delete button's `"click"`:
 
-1. If `currentId === null`, `return` — nothing to delete.
+1. If `currentId === null`, `return`; nothing to delete.
 2. `DELETE` `/api/notes/" + currentId`.
 3. Call `clearForm()`, then `await loadNotes()`.
 
@@ -424,10 +425,10 @@ deleteButton.disabled = true;
 loadNotes();
 ```
 
-Save, reload the page, and create a note — it should appear in the
+Save, reload the page, and create a note: it should appear in the
 sidebar. Click it, edit the content, save again — same note updates in
 place rather than creating a second one. Click "+ New note", fill in a
-different title, save — a genuinely new one appears. Delete one and it's
+different title, save; a genuinely new one appears. Delete one and it's
 gone, for good, even after restarting the server. If you get stuck,
 [`code/public/script.js`](../code/public/script.js) and
 [`code/server.js`](../code/server.js) show one way to write all four
@@ -440,9 +441,9 @@ list using
 [`.filter(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 (from [Course 9](../../09-budget-tracker/en/01-budget-tracker.md)) over
 the already-loaded `notes` array, keeping only notes whose title or
-content includes the search text (case-insensitively —
+content includes the search text (case-insensitively:
 [`.toLowerCase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-both sides before comparing). This is filtering data already in the
+on both sides before comparing). This is filtering data already in the
 browser, no new request needed.
 
 ## 🔴 Optional, genuine challenge — Search with SQL instead
@@ -450,7 +451,7 @@ browser, no new request needed.
 Now do the same search server-side. SQL's `LIKE` operator does
 pattern-matching, with `%` as a wildcard: `WHERE title LIKE ?` with a
 value of `"%bread%"` matches any title containing "bread" anywhere. Add
-a function to `db.js` — `searchNotes(query)` — running something like
+a function to `db.js` (`searchNotes(query)`) running something like
 `SELECT * FROM notes WHERE title LIKE ? OR content LIKE ? ORDER BY
 updated_at DESC`, called with `"%" + query + "%"` twice (once per `?`).
 Wire it up as `GET /api/notes?q=...` (`req.query.q` holds the query
@@ -458,7 +459,7 @@ string value), falling back to `getAllNotes()` when `q` is missing, then
 update the frontend's search box to call this endpoint instead of
 filtering the already-loaded array. The real difference from the 🟡
 version: this scales to a database with far more notes than would ever
-be practical to load into the browser and filter by hand — the database
+be practical to load into the browser and filter by hand. The database
 does the searching, not JavaScript.
 
 ## Try it yourself
@@ -481,7 +482,7 @@ Run `node server.js` inside
   API from the same origin, avoiding CORS entirely
 - SQLite and SQL: `CREATE TABLE`, `SELECT`/`INSERT`/`UPDATE`/`DELETE`,
   placeholders, and why SQL injection makes placeholders non-optional
-- Node's built-in `node:sqlite` — a real database with no extra
+- Node's built-in `node:sqlite`: a real database with no extra
   dependency to install
 - Deciding whether an action is a create or an update (`POST` vs
   `PATCH`) based on state you're tracking client-side (`currentId`)
@@ -490,7 +491,7 @@ Run `node server.js` inside
 
 ## What's next
 
-This was Idea 8 from [PROJECT-IDEAS.md](../../../PROJECT-IDEAS.md) —
+This was Idea 8 from [PROJECT-IDEAS.md](../../../PROJECT-IDEAS.md):
 frontend and backend, finally talking to each other over a real
 database. What's left there gets more ambitious still: rebuilding
 something in a frontend framework, or a real-time multiplayer game.
