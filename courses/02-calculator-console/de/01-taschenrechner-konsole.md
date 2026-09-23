@@ -5,7 +5,7 @@
 # Kapitel 1 – Taschenrechner in der Konsole
 
 **Ziel:** einen Taschenrechner bauen, der addieren, subtrahieren,
-multiplizieren und dividieren kann — zuerst durch das Eintippen einzelner
+multiplizieren und dividieren kann: zuerst durch das Eintippen einzelner
 Ausdrücke, dann mit einer eigenen, wiederverwendbaren Funktion. Alles in
 diesem Kapitel spielt sich in der Browser-Konsole aus
 [Kurs 1 – Basics](../../01-basics/de/00-einleitung.md) ab.
@@ -43,7 +43,7 @@ console.log(ergebnis); // 8
 
 Nutze `let` für einen Wert, der sich später ändern kann, und
 [`const`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/const)
-für einen, der nicht neu zugewiesen werden soll — z. B. `const pi = 3.14159;`.
+für einen, der nicht neu zugewiesen werden soll, z. B. `const pi = 3.14159;`.
 Details zu `let`: [MDN – let](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/let).
 
 **Probier es selbst:** speichere zwei Zahlen in Variablen und berechne ihr
@@ -67,14 +67,14 @@ add(10, 20); // 30
 
 Nachschlagen: [MDN – Funktionen](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Functions).
 
-Jetzt verallgemeinern wir `add` zu einer echten Taschenrechner-Funktion, die
+Jetzt wird `add` zu einer echten Taschenrechner-Funktion verallgemeinert, die
 zusätzlich einen *Operator* entgegennimmt und danach entscheidet, was zu tun
-ist. Dafür braucht es eine Bedingung — eine Möglichkeit für Code, zwischen
+ist. Dafür braucht es eine Bedingung: eine Möglichkeit für Code, zwischen
 mehreren Pfaden zu wählen. Das passende Werkzeug für "wähle eine von mehreren
 exakten Übereinstimmungen" ist
 [`switch`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/switch)
 (eine [`if`/`else`-Kette](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/if...else)
-würde ebenfalls funktionieren — es gibt oft mehr als einen richtigen Weg,
+würde ebenfalls funktionieren; es gibt oft mehr als einen richtigen Weg,
 etwas zu schreiben):
 
 ```js
@@ -100,7 +100,7 @@ calculate(6, "?", 2);  // gibt eine Warnung aus, liefert undefined
 ```
 
 Die Schreibweise `` `Unknown operator: "${operator}"` `` ist ein
-[Template Literal](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Template_literals) —
+[Template Literal](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Template_literals):
 Backticks statt Anführungszeichen erlauben es, eine Variable direkt mit
 `${...}` in einen Text einzusetzen.
 
@@ -110,7 +110,7 @@ weitere Fälle: `"%"` für den Rest und `"**"` für die Potenz.
 
 ## 🟡 Optional — Division durch null sauber behandeln
 
-Division durch null lässt JavaScript nicht abstürzen — `10 / 0` liefert
+Division durch null lässt JavaScript nicht abstürzen: `10 / 0` liefert
 still und leise `Infinity` (und `0 / 0` liefert
 [`NaN`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/NaN),
 "Not a Number"). Das ist selten das, was der Nutzer eines Taschenrechners
@@ -131,24 +131,24 @@ Nachschlagen: [MDN – Infinity](https://developer.mozilla.org/de/docs/Web/JavaS
 
 `calculate` verarbeitet genau eine Rechenoperation zwischen zwei Zahlen. Ein
 echter Ausdruck wie `"(3 + 4) * 2"` enthält mehr als eine Operation *und*
-Klammern, die die normale Rechenreihenfolge außer Kraft setzen — `calculate`
+Klammern, die die normale Rechenreihenfolge außer Kraft setzen. `calculate`
 allein kann das nicht als Ganzes auswerten. Das zum Laufen zu bringen ist ein
-kleines, echtes Parsing-Problem — und ein guter erster Vorgeschmack darauf,
+kleines, echtes Parsing-Problem und ein guter erster Vorgeschmack darauf,
 was "Parsen" überhaupt bedeutet.
 
 Die Idee, in zwei Schritten:
 
-1. **Tokenisieren** — den String `"(3 + 4) * 2"` in eine flache Liste von
+1. **Tokenisieren:** den String `"(3 + 4) * 2"` in eine flache Liste von
    Einzelteilen zerlegen: `["(", "3", "+", "4", ")", "*", "2"]`. Das läuft
    einfach Zeichen für Zeichen durch den String, fasst zusammenhängende
    Ziffern zusammen und behandelt `(`, `)`, `+`, `-`, `*`, `/` jeweils als
    eigenes Element.
-2. **Parsen** — diese Liste von Tokens lesen und ein Ergebnis berechnen,
+2. **Parsen:** diese Liste von Tokens lesen und ein Ergebnis berechnen,
    dabei Klammern respektieren und berücksichtigen, dass `*`/`/` stärker
    binden als `+`/`-`. Der klassische, elegante Weg dafür ist ein
    **rekursiver Abstiegs-Parser** (recursive descent parser): eine Funktion
    pro "Rangstufe" der Rechenreihenfolge, wobei jede Stufe die nächsttiefere
-   aufruft und — bei Klammern — ganz nach oben zurückspringt. Hintergrund:
+   aufruft und (bei Klammern) ganz nach oben zurückspringt. Hintergrund:
    [Wikipedia – Parser (Abschnitt "Rekursiver Abstiegsparser")](https://de.wikipedia.org/wiki/Parser#Parser_f%C3%BCr_kontextfreie_Grammatiken),
    [MDN – Rekursion](https://developer.mozilla.org/de/docs/Glossary/Recursion).
 
@@ -164,15 +164,15 @@ evaluateExpression("2 + 3 * 4");   // 14
 evaluateExpression("(2 + 3) * (4 - 1)"); // 15
 ```
 
-Das soll schwierig sein — es ist das erste wirklich "programmierertypische"
+Das soll schwierig sein. Es ist das erste wirklich "programmierertypische"
 Problem in diesem Kurs, keine bloß längere Version von dem, was vorher kam.
-Sie ist nicht nötig, um den Kurs abzuschließen — wenn es beim ersten Mal noch
+Sie ist nicht nötig, um den Kurs abzuschließen. Wenn es beim ersten Mal noch
 nicht klickt, ist das völlig in Ordnung, komm einfach zurück, wann immer du
 magst. (Eine verlockende Abkürzung
 wäre JavaScripts eingebautes
 [`eval()`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/eval),
 das einen solchen String tatsächlich auswerten würde. Das steht hier nur der
-Vollständigkeit halber — `eval` auf etwas anzuwenden, dem man nicht restlos
+Vollständigkeit halber: `eval` auf etwas anzuwenden, dem man nicht restlos
 vertraut, ist ein bekanntes Sicherheitsrisiko, und der eigene kleine Parser
 lehrt ohnehin deutlich mehr.)
 
@@ -187,10 +187,10 @@ lehrt ohnehin deutlich mehr.)
 
 ## Weiter
 
-Dieser Kurs steht für sich — du hast einen vollständigen Taschenrechner
+Dieser Kurs steht für sich. Du hast einen vollständigen Taschenrechner
 gebaut. Wenn du dasselbe Problem gerne mit einer echten, klickbaren
 Oberfläche statt der Konsole lösen möchtest, deckt
 [Kurs 3 – Taschenrechner GUI](../../03-calculator-gui/de/01-taschenrechner-gui.md)
-genau das ab — auch er setzt diesen Kurs nicht voraus, fang also an, wo es
+genau das ab; auch er setzt diesen Kurs nicht voraus, fang also an, wo es
 dich mehr reizt. Eine breitere Auswahl, was als Nächstes kommen könnte,
 steht in [PROJECT-IDEAS.de.md](../../../PROJECT-IDEAS.de.md).
