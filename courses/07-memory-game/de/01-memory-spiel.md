@@ -19,8 +19,8 @@ einsatzbereit. `script.js` ist die eigentliche Übung: kopiere alle drei
 Dateien in deinen eigenen Arbeitsordner, leere deine Kopie von
 `script.js`, und bau sie Stück für Stück wieder auf. Wie in
 [Kurs 5](../../05-unit-converter/de/01-einheitenumrechner.md) und
-[Kurs 6](../../06-quiz/de/01-quiz.md) bleibt der kniffligste Teil — zu
-entscheiden, was beim Klick auf eine Karte passiert — dir überlassen, aus
+[Kurs 6](../../06-quiz/de/01-quiz.md) bleibt der kniffligste Teil (zu
+entscheiden, was beim Klick auf eine Karte passiert) dir überlassen, aus
 beschriebenen Schritten zusammengesetzt, statt fertig geschrieben
 vorzuliegen.
 
@@ -124,7 +124,7 @@ let moves = 0;
 `cards` enthält gleich ein Objekt pro Karte, wie `{ value: "🍎", flipped:
 false, matched: false }` — das Objektliteral-Muster aus früheren Kursen
 (ein Paar geschweifter Klammern mit `key: value`-Paaren, das einen Wert
-erzeugt, den du speichern kannst — anders als das `{}`, das einen Block
+erzeugt, den du speichern kannst, anders als das `{}`, das einen Block
 aus Anweisungen umschließt). `firstIndex` merkt sich die Position der
 ersten aufgedeckten Karte des aktuellen Paares (oder `null`, wenn gerade
 keine Karte auf ihren Partner wartet), und `isChecking` wird relevant,
@@ -311,11 +311,11 @@ schreiben kann.
 
 Der "Play again"-Button der Gewinnnachricht (`restartButton`) tut noch
 nichts. Schreib eine Funktion `restartGame()`, die alles wieder auf einen
-frischen Start zurücksetzt — ein neu gemischtes `cards`-Array
+frischen Start zurücksetzt: ein neu gemischtes `cards`-Array
 (`createCards()` erledigt das Mischen schon), `moves` zurück auf 0,
 `firstIndex` zurück auf `null`, `isChecking` zurück auf `false`, die
-Gewinnnachricht wieder verstecken, und neu rendern — und verdrahte sie
-dann mit `restartButton.addEventListener("click", restartGame);`.
+Gewinnnachricht wieder verstecken, und neu rendern. Verdrahte sie dann
+mit `restartButton.addEventListener("click", restartGame);`.
 
 ## 🔴 Optional, echte Herausforderung — Deine Bestzeit merken
 
@@ -325,12 +325,12 @@ Nutz [`localStorage`](https://developer.mozilla.org/de/docs/Web/API/Window/local
 vorausgesetzt), um über Seiten-Neuladen hinweg die wenigsten Züge zu
 merken, mit denen du je ein Spiel beendet hast. Wenn `checkWin()`
 feststellt, dass das Spiel gewonnen ist, vergleiche `moves` mit dem, was
-gespeichert ist (beim allerersten Mal ist nichts gespeichert — überleg
+gespeichert ist (beim allerersten Mal ist nichts gespeichert; überleg
 dir, was das bedeuten soll), und wenn dieses Spiel weniger Züge gebraucht
 hat, speichere die neue Bestzeit und zeig sie neben dem aktuellen
 Ergebnis, z. B. "You won in 9 moves! (Best: 7)". Da du eine einzelne Zahl
 statt eines ganzen Arrays aus Objekten speicherst, braucht das weniger
-`JSON.stringify`/`JSON.parse`-Aufwand als in Kurs 4 — eine Zahl übersteht
+`JSON.stringify`/`JSON.parse`-Aufwand als in Kurs 4. Eine Zahl übersteht
 den Umweg über `localStorage` als Text problemlos, mit `Number(...)` auf
 dem Rückweg.
 

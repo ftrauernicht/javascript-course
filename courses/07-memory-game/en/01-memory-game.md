@@ -17,8 +17,8 @@ The finished reference files live in
 `script.js` is the actual exercise: copy all three files into your own
 working folder, empty out your copy of `script.js`, and build it back up
 one piece at a time. As in [Course 5](../../05-unit-converter/en/01-unit-converter.md)
-and [Course 6](../../06-quiz/en/01-quiz.md), the trickiest part — deciding
-what happens when you click a card — is left for you to assemble from
+and [Course 6](../../06-quiz/en/01-quiz.md), the trickiest part (deciding
+what happens when you click a card) is left for you to assemble from
 described steps, not handed to you fully written.
 
 Here's the finished result you're working towards:
@@ -294,10 +294,10 @@ in [`code/script.js`](../code/script.js) show one way to write them.
 
 The win message's "Play again" button (`restartButton`) doesn't do
 anything yet. Write a `restartGame()` function that puts everything back
-to a fresh start — a new shuffled `cards` array (`createCards()` already
+to a fresh start: a new shuffled `cards` array (`createCards()` already
 does the shuffling), `moves` back to 0, `firstIndex` back to `null`,
-`isChecking` back to `false`, hide the win message again, and re-render —
-then wire it up with `restartButton.addEventListener("click",
+`isChecking` back to `false`, hide the win message again, and re-render.
+Then wire it up with `restartButton.addEventListener("click",
 restartGame);`.
 
 ## 🔴 Optional, genuine challenge — Remember your best score
@@ -308,12 +308,12 @@ Using [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/l
 keep track of the fewest moves you've ever finished a game in, across
 page reloads. When `checkWin()` finds the game won, compare `moves`
 against whatever's stored (there won't be anything stored the very first
-time — decide what that should mean), and if this game took fewer moves,
+time; decide what that should mean), and if this game took fewer moves,
 save the new best and show it alongside the current result, e.g. "You won
 in 9 moves! (Best: 7)". Since you're storing a single number rather than
 a whole array of objects, this needs less `JSON.stringify`/`JSON.parse`
-machinery than Course 4 did — a number survives the trip through
-`localStorage` as text just fine with `Number(...)` on the way back out.
+machinery than Course 4 did. A number survives the trip through
+`localStorage` as text just fine, with `Number(...)` on the way back out.
 
 ## Try it yourself
 
