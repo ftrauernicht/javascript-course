@@ -5,10 +5,10 @@
 # Chapter 1 – Programming Basics
 
 **Goal:** before building anything, get a map of the small set of building
-blocks that almost every programming language shares — values, variables,
+blocks that almost every programming language shares: values, variables,
 operators, the three kinds of brackets, functions, decisions, and
 repetition. Chapter 0 showed you *how* to type into the console; this
-chapter is about *what* you're allowed to type. Nothing here is throwaway —
+chapter is about *what* you're allowed to type. Nothing here is throwaway.
 Course 2 and Course 3 each use every single one of these to build a
 calculator.
 
@@ -27,7 +27,7 @@ true        // a boolean — only ever true or false
 
 JavaScript can tell you a value's type on demand with the
 [`typeof`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof)
-operator — a handy thing to poke at while you're getting a feel for this:
+operator, a handy thing to poke at while you're getting a feel for this:
 
 ```js
 typeof 42        // "number"
@@ -35,7 +35,7 @@ typeof "hello"    // "string"
 typeof true      // "boolean"
 ```
 
-There are a few more types — arrays and objects are the big ones. This
+There are a few more types: arrays and objects are the big ones. This
 course doesn't cover them in depth; you'll pick up just enough array
 know-how, explained inline, wherever a later course actually needs it
 (Course 3 does). Full list: [MDN – Data types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Data_structures).
@@ -53,14 +53,14 @@ Use [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/St
 for a value that may change later, and
 [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
 for one that shouldn't be reassigned. (You may also spot `var` in older code
-or tutorials — it's the original way to declare a variable, kept around for
+or tutorials: it's the original way to declare a variable, kept around for
 backwards compatibility, with some genuinely confusing quirks `let` and
 `const` were invented to fix. There's no reason to reach for it today; more:
 [MDN – var](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var).)
 
 A variable name must start with a letter, `$`, or `_`, is case-sensitive
 (`age` and `Age` are different variables), and by convention is written in
-`camelCase` — lowercase first word, capitalize the start of every word after
+`camelCase`: lowercase first word, capitalize the start of every word after
 that (`firstName`, `totalScore`).
 
 ## 🟢 Core — Operators: doing things with values
@@ -70,7 +70,7 @@ You've already used the arithmetic ones
 [MDN – Arithmetic operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#arithmetic_operators)).
 Three more families matter just as much:
 
-**Assignment** — `=` stores a value; the others are shorthand for "take the
+**Assignment**: `=` stores a value; the others are shorthand for "take the
 current value, do something to it, store it back":
 
 ```js
@@ -79,7 +79,7 @@ score += 5;  // same as: score = score + 5;  → 15
 score *= 2;  // same as: score = score * 2;  → 30
 ```
 
-**Comparison** — asking a true/false question about two values:
+**Comparison**: asking a true/false question about two values:
 
 ```js
 5 === 5    // true  (strict equality: same value AND same type)
@@ -95,7 +95,7 @@ causes more confusing bugs than it saves keystrokes. This course uses strict
 equality everywhere, on purpose. Details:
 [MDN – Equality comparisons](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Equality_comparisons_and_sameness).
 
-**Logical** — combining or inverting true/false values:
+**Logical**: combining or inverting true/false values:
 
 ```js
 true && false   // false ("and" — both sides must be true)
@@ -105,7 +105,7 @@ true || false   // true  ("or" — at least one side must be true)
 
 Full reference: [MDN – Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators).
 
-**Ternary (conditional)** — a compact, one-line if/else that produces a
+**Ternary (conditional)**: a compact, one-line if/else that produces a
 *value* instead of running a block:
 
 ```js
@@ -115,7 +115,7 @@ const label = age >= 18 ? "adult" : "minor";
 ```
 
 Read `condition ? valueIfTrue : valueIfFalse` left to right. It's most
-useful for short either/or choices like this one — for anything longer, a
+useful for short either/or choices like this one; for anything longer, a
 full `if`/`else` (below) reads more clearly. More:
 [MDN – Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator).
 
@@ -138,13 +138,13 @@ console.log("hi");           // calling console.log with one value
 function add(a, b) { ... }   // a and b are listed inside parentheses
 ```
 
-**Curly braces `{}`** mark a **block** — a group of statements bundled
+**Curly braces `{}`** mark a **block**: a group of statements bundled
 together that run as one unit. You'll see them around a function's body, an
 `if`'s body, and a loop's body (all coming up in this same chapter). A block
 is a container, not a value by itself. More:
 [MDN – Block statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block).
 
-**Square brackets `[]`** are for arrays — ordered lists of values — and for
+**Square brackets `[]`** are for arrays (ordered lists of values) and for
 reading one item out by its position:
 
 ```js
@@ -152,14 +152,14 @@ const colors = ["red", "green", "blue"];
 colors[0]; // "red" — counting starts at 0, not 1
 ```
 
-This course doesn't cover arrays in depth — you'll pick up just enough,
-explained inline, wherever a later course actually needs them (Course 3
-does). For now, just recognize the shape when you see it. More:
+Same deal as with the other types: you'll get just enough, explained
+inline, wherever a later course actually needs it (Course 3 does). For
+now, just recognize the shape when you see it. More:
 [MDN – Indexed collections](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections).
 
 ## 🟢 Core — Functions: naming a piece of behavior
 
-You'll build these properly, hands-on, in Course 2 or Course 3 — for now,
+You'll build these properly, hands-on, in Course 2 or Course 3; for now,
 just the shape, so nothing looks unfamiliar later:
 
 ```js
@@ -170,7 +170,7 @@ function add(a, b) {
 add(3, 4); // 7
 ```
 
-`a` and `b` are **parameters** — placeholders for whatever values get passed
+`a` and `b` are **parameters**: placeholders for whatever values get passed
 in when the function is called. `return` sends a value back out to whoever
 called the function. More: [MDN – Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions).
 
@@ -189,7 +189,7 @@ if (temperature < 10) {
 ```
 
 JavaScript checks the conditions top to bottom and runs the block belonging
-to the first one that's `true` — the rest are skipped entirely. `else` (and
+to the first one that's `true`; the rest are skipped entirely. `else` (and
 `else if`) are both optional. More:
 [MDN – if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else).
 
@@ -211,14 +211,14 @@ for (let i = 1; i <= 5; i++) {
 // 5
 ```
 
-Its three parts, separated by semicolons: **start** (`let i = 1` — runs
-once, before anything else), **condition** (`i <= 5` — checked before every
-run; the loop stops the moment this is `false`), and **step** (`i++` — runs
+Its three parts, separated by semicolons: **start** (`let i = 1`, runs
+once, before anything else), **condition** (`i <= 5`, checked before every
+run; the loop stops the moment this is `false`), and **step** (`i++`, runs
 after every iteration). `i++` is shorthand for `i = i + 1`; details:
 [MDN – Increment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment).
 
 [`while`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
-is the simpler sibling, for when you don't know the exact count up front —
+is the simpler sibling, for when you don't know the exact count up front;
 it just keeps going as long as its condition stays true:
 
 ```js
@@ -242,7 +242,7 @@ while (count < 3) {
    comment */
 ```
 
-The computer ignores comments entirely — they're notes for humans reading
+The computer ignores comments entirely; they're notes for humans reading
 the code, including future-you. Good practice (and this course's own rule)
 is to comment the *why*, not the *what*: if the code already says what it
 does, a comment repeating that just adds noise. More:
@@ -251,25 +251,25 @@ does, a comment repeating that just adds noise. More:
 ## 🟡 Optional — Truthy and falsy
 
 Inside an `if`'s condition, JavaScript will accept *any* value, not just
-`true`/`false` — it automatically treats some values as standing in for
+`true`/`false`; it automatically treats some values as standing in for
 `false` ("falsy"): `0`, `""` (empty string), `null`, `undefined`, and `NaN`
-(short for "Not a Number" — what you get back from an invalid math
+(short for "Not a Number", what you get back from an invalid math
 operation, e.g. `0 / 0`). Everything else is "truthy". This mostly stays
-invisible until it surprises you once — worth knowing it exists. More:
+invisible until it surprises you once. Worth knowing it exists. More:
 [MDN – Truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy),
 [MDN – Falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy).
 
 ## 🔴 Optional, genuine challenge — FizzBuzz
 
 A small, famous exercise that exercises loops, conditionals, and the
-modulo operator (`%`) together — a solid capstone before moving on to
+modulo operator (`%`) together, a solid capstone before moving on to
 Course 2 or Course 3:
 
 > Loop through the numbers 1 to 15. For each one: print `"Fizz"` if it's
 > divisible by 3, `"Buzz"` if it's divisible by 5, `"FizzBuzz"` if it's
 > divisible by both, otherwise print the number itself.
 
-Try it yourself before peeking — you have every tool you need from this
+Try it yourself before peeking; you have every tool you need from this
 chapter alone (a `for` loop, `if`/`else if`/`else`, and `%`). A hint, if you
 want one: check "divisible by both" *before* checking either one alone, or
 the more specific case never gets a chance to run.
@@ -288,19 +288,19 @@ the more specific case never gets a chance to run.
 ## Next
 
 This was Course 1's last chapter. Every other course in this repository
-builds only on this one — none of them requires any of the others, so
+builds only on this one. None of them requires any of the others, so
 pick whichever sounds more interesting:
 
-- [Course 2 – Calculator Console](../../02-calculator-console/en/01-calculator-console.md) — a calculator, entirely in the browser console.
-- [Course 3 – Calculator GUI](../../03-calculator-gui/en/01-calculator-gui.md) — the same idea, with a real, clickable interface.
-- [Course 4 – To-Do List](../../04-todo-list/en/01-todo-list.md) — add, check off, and remove tasks, saved between visits.
-- [Course 5 – Unit Converter](../../05-unit-converter/en/01-unit-converter.md) — convert length, weight, and temperature.
-- [Course 6 – Quiz](../../06-quiz/en/01-quiz.md) — a multiple-choice quiz with scoring.
-- [Course 7 – Memory Game](../../07-memory-game/en/01-memory-game.md) — a card-matching memory game.
-- [Course 8 – Weather App](../../08-weather-app/en/01-weather-app.md) — real, live weather for any city you type in.
-- [Course 9 – Budget Tracker](../../09-budget-tracker/en/01-budget-tracker.md) — income and expenses with a category chart.
-- [Course 10 – REST API](../../10-rest-api/en/01-rest-api.md) — a small server built with Node.js and Express.
-- [Course 11 – Full-Stack Notes App](../../11-notes-app/en/01-notes-app.md) — a frontend and backend talking to each other over a real database.
+- [Course 2 – Calculator Console](../../02-calculator-console/en/01-calculator-console.md): a calculator, entirely in the browser console.
+- [Course 3 – Calculator GUI](../../03-calculator-gui/en/01-calculator-gui.md): the same idea, with a real, clickable interface.
+- [Course 4 – To-Do List](../../04-todo-list/en/01-todo-list.md): add, check off, and remove tasks, saved between visits.
+- [Course 5 – Unit Converter](../../05-unit-converter/en/01-unit-converter.md): convert length, weight, and temperature.
+- [Course 6 – Quiz](../../06-quiz/en/01-quiz.md): a multiple-choice quiz with scoring.
+- [Course 7 – Memory Game](../../07-memory-game/en/01-memory-game.md): a card-matching memory game.
+- [Course 8 – Weather App](../../08-weather-app/en/01-weather-app.md): real, live weather for any city you type in.
+- [Course 9 – Budget Tracker](../../09-budget-tracker/en/01-budget-tracker.md): income and expenses with a category chart.
+- [Course 10 – REST API](../../10-rest-api/en/01-rest-api.md): a small server built with Node.js and Express.
+- [Course 11 – Full-Stack Notes App](../../11-notes-app/en/01-notes-app.md): a frontend and backend talking to each other over a real database.
 
 Whichever you pick, every one of these building blocks becomes part of one
 real program.
