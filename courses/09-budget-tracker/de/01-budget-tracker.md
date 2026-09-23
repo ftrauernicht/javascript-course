@@ -1,12 +1,12 @@
 🇩🇪 Deutsch | 🇬🇧 [English](../en/01-budget-tracker.md)
 
-[← Zurück zur Kursübersicht](../../../README.de.md) · Verwandt: [Kurs 4 – To-Do-Liste](../../04-todo-list/de/01-to-do-liste.md), [Kurs 8 – Wetter-App](../../08-weather-app/de/01-wetter-app.md) (keiner davon nötig — das Speicher-Muster unten nutzt denselben Ansatz wie Kurs 4, von Grund auf neu gebaut)
+[← Zurück zur Kursübersicht](../../../README.de.md) · Verwandt: [Kurs 4 – To-Do-Liste](../../04-todo-list/de/01-to-do-liste.md), [Kurs 8 – Wetter-App](../../08-weather-app/de/01-wetter-app.md) (keiner davon nötig: Das Speicher-Muster unten nutzt denselben Ansatz wie Kurs 4, von Grund auf neu gebaut)
 
 # Kapitel 1 – Budget-Tracker
 
 **Ziel:** eine kleine App bauen, die Einnahmen und Ausgaben erfasst, deinen
 aktuellen Kontostand zeigt, und Ausgaben nach Kategorie mit einem
-einfachen Balkendiagramm aufschlüsselt — komplett aus Array-Methoden
+einfachen Balkendiagramm aufschlüsselt, komplett aus Array-Methoden
 gebaut, ganz ohne Diagramm-Bibliothek. Dieser Kurs setzt nur
 [Kurs 1 – Basics](../../01-basics/de/00-einleitung.md) voraus (Werte,
 Variablen, Operatoren, Klammern, Funktionen, Bedingungen, Schleifen) und
@@ -63,14 +63,14 @@ Hier ist das fertige Ergebnis, auf das du hinarbeitest:
 </div>
 ```
 
-`#entry-list` und `#chart` starten leer — JavaScript füllt beide aus
+`#entry-list` und `#chart` starten leer. JavaScript füllt beide aus
 denselben zugrunde liegenden Daten, derselbe "Container in HTML leer
 lassen, aus JavaScript füllen"-Ansatz wie bei jeder Liste oder jedem
 Raster in früheren Kursen. Die vollständige Version steht in
 [`index.html`](../code/index.html) und [`style.css`](../code/style.css);
 das CSS ist ein einfaches Karten-Layout, nichts Neues.
 
-Ab hier geht alles in `script.js` — das ist die Datei, die `index.html`
+Ab hier geht alles in `script.js`, der Datei, die `index.html`
 tatsächlich lädt. Starte mit:
 
 ```js
@@ -89,7 +89,7 @@ const chart = document.getElementById("chart");
 ## 🟢 Kern — Das DOM und der Speicher, kurz erklärt
 
 *(Falls du Kurs 3, 4, 5, 6, 7 oder 8 gemacht hast, ist dir das meiste
-schon vertraut — spring direkt zum nächsten Abschnitt.)*
+schon vertraut; spring direkt zum nächsten Abschnitt.)*
 
 - [`document.getElementById(...)`](https://developer.mozilla.org/de/docs/Web/API/Document/getElementById)
   findet ein Element anhand seiner `id`.
@@ -109,13 +109,13 @@ schon vertraut — spring direkt zum nächsten Abschnitt.)*
   um sie zusammenzukleben, ist genau das Render-Muster, das
   [Kurs 4](../../04-todo-list/de/01-to-do-liste.md) eingeführt hat.
 - [`localStorage`](https://developer.mozilla.org/de/docs/Web/API/Window/localStorage)
-  ist der dauerhafte Schlüssel-Wert-Speicher des Browsers — Daten, die dort
+  ist der dauerhafte Schlüssel-Wert-Speicher des Browsers: Daten, die dort
   gespeichert werden, überstehen das Schließen des Tabs oder des ganzen
   Browsers. Er speichert nur Text, also braucht das Speichern von allem
   anderen [`JSON.stringify(...)`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
   auf dem Hinweg und
   [`JSON.parse(...)`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
-  auf dem Rückweg — derselbe Umweg, den Kurs 4 für seine Aufgaben genutzt
+  auf dem Rückweg, derselbe Umweg, den Kurs 4 für seine Aufgaben genutzt
   hat.
 
 Diese zwei bekommst du fertig, unverändert aus demselben Kurs-4-Muster:
@@ -134,7 +134,7 @@ let entries = loadEntries();
 ```
 
 Jeder Eintrag ist ein einfaches Objekt: `{ description: "Groceries",
-amount: 150, type: "expense", category: "Food" }` — das
+amount: 150, type: "expense", category: "Food" }`, das
 Objektliteral-Muster aus früheren Kursen, ein Objekt pro Zeile, die du
 später auf dem Bildschirm siehst.
 
@@ -146,7 +146,7 @@ Kapitel braucht zwei andere Formen:
 
 **[`.filter(...)`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)**
 behält nur die Elemente, die eine Funktion durchlässt, und wirft den Rest
-weg — das Ergebnis ist ein kürzeres Array (oder ein gleich langes, oder
+weg. Das Ergebnis ist ein kürzeres Array (oder ein gleich langes, oder
 ein leeres), nie eine umgewandelte Version jedes Elements:
 
 ```js
@@ -156,7 +156,7 @@ console.log(even); // [2, 4, 6]
 ```
 
 **[`.reduce(...)`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)**
-geht ein Array durch und verdichtet es auf einen einzigen Wert — eine
+geht ein Array durch und verdichtet es auf einen einzigen Wert: eine
 Summe, eine Anzahl, ein Maximum, was auch immer. Es nimmt eine Funktion,
 die die "bisherige Zwischensumme" und das aktuelle Element bekommt, sowie
 einen Startwert:
@@ -169,7 +169,7 @@ console.log(total); // 40
 
 Lies das so: "starte `sum` bei `0`; ersetze für jeden `price` `sum` durch
 `sum + price`; sobald jedes Element besucht wurde, ist `total` das, was
-aus `sum` geworden ist." Die `0` ist der Startwert — tausch sie gegen
+aus `sum` geworden ist." Die `0` ist der Startwert. Tausch sie gegen
 etwas anderes aus, und `.reduce(...)` kann statt einer Summe ein Maximum
 berechnen, wie du weiter unten siehst.
 
@@ -191,7 +191,7 @@ function calculateBalance() {
 
 `total` startet bei `0`. Für jeden Eintrag gibt die Funktion entweder
 `total + entry.amount` zurück (eine Einnahme lässt den Kontostand steigen)
-oder `total - entry.amount` (eine Ausgabe lässt ihn sinken) — was auch
+oder `total - entry.amount` (eine Ausgabe lässt ihn sinken); was auch
 immer zurückgegeben wird, wird zum `total`, das in den nächsten Eintrag
 einfließt. Nach dem letzten gibt `.reduce(...)` genau dieses finale
 `total` direkt zurück.
@@ -200,7 +200,7 @@ einfließt. Nach dem letzten gibt `.reduce(...)` genau dieses finale
 
 Jetzt bist du dran, mit `.filter(...)` von oben.
 `calculateCategoryTotals()` soll ein einfaches Objekt in der Form
-`{ Food: 150, Rent: 800, Fun: 40 }` bauen und zurückgeben — ein Schlüssel
+`{ Food: 150, Rent: 800, Fun: 40 }` bauen und zurückgeben: ein Schlüssel
 pro Kategorie mit mindestens einer Ausgabe, zugeordnet zur Summe der
 Ausgaben dieser Kategorie. Schritte:
 
@@ -211,7 +211,7 @@ Ausgaben dieser Kategorie. Schritte:
    [`.forEach(...)`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
    iterieren. Für jede addiere ihren Betrag in `totals` unter dem
    Schlüssel ihrer Kategorie: `totals[entry.category] =
-   (totals[entry.category] || 0) + entry.amount;` — das `|| 0` ist hier
+   (totals[entry.category] || 0) + entry.amount;`. Das `|| 0` ist hier
    wichtig, denn `totals[entry.category]` ist beim ersten Auftauchen
    einer Kategorie `undefined` (nicht `0`), und `undefined +
    entry.amount` wäre `NaN`.
@@ -234,7 +234,7 @@ muss:
    trimmen, und `Number(amountInput.value)` lesen. Ist die Beschreibung
    leer, oder ist der Betrag keine positive Zahl (`!(amount > 0)` fängt
    `0`, negative Zahlen und `NaN` aus einem leeren Feld alle auf einmal
-   ab), `return` — es gibt nichts hinzuzufügen.
+   ab), `return`: es gibt nichts hinzuzufügen.
 3. Ein neues Eintrags-Objekt auf `entries` pushen: `{ description:
    description, amount: amount, type: typeInput.value, category:
    categoryInput.value }`.
@@ -251,15 +251,15 @@ function handleAddEntry(event) {
 entryForm.addEventListener("submit", handleAddEntry);
 ```
 
-Speichern, `index.html` neu laden, und einen Eintrag hinzufügen — er
+Speichern, `index.html` neu laden, und einen Eintrag hinzufügen. Er
 sollte in der Liste erscheinen und der Kontostand sich aktualisieren.
 Falls du nicht weiterkommst, [`code/script.js`](../code/script.js) zeigt
 einen Weg, wie man beide Funktionen schreiben kann.
 
 ## 🟢 Kern — Alles rendern
 
-Das hier bekommst du fertig — reines DOM-Rendering, aufgebaut auf den
-Funktionen oben, nicht der Punkt dieses Kapitels:
+Das hier bekommst du fertig, reines DOM-Rendering, aufgebaut auf den
+Funktionen oben und nicht der Punkt dieses Kapitels:
 
 ```js
 function formatAmount(amount) {
@@ -336,7 +336,7 @@ Zwei Dinge, die auffallen sollten:
 
 - [`.toFixed(2)`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
   rundet eine Zahl auf 2 Nachkommastellen und gibt sie als Zeichenkette
-  zurück, sodass `150` als `$150.00` erscheint, nicht als `$150` —
+  zurück, sodass `150` als `$150.00` erscheint, nicht als `$150`,
   dieselbe Methode, die schon [Kurs 5](../../05-unit-converter/de/01-einheitenumrechner.md)
   genutzt hat.
 - Das "Diagramm" ist reines CSS: `.bar-track` ist ein grauer Streifen
@@ -344,11 +344,11 @@ Zwei Dinge, die auffallen sollten:
   direkt aus JavaScript gesetzt (`style="width: 65%"`), so skaliert, dass
   die Kategorie mit den höchsten Ausgaben den Streifen komplett füllt
   (`percent = amount / highest * 100`) und jeder andere Balken
-  proportional kürzer ist. Keine Diagramm-Bibliothek nötig — `.reduce(...)`,
+  proportional kürzer ist. Keine Diagramm-Bibliothek nötig. `.reduce(...)`,
   das die höchste Summe findet, macht diese Skalierung erst möglich.
 - [`Object.keys(...)`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
   verwandelt die Schlüssel eines Objekts in ein einfaches Array
-  (`{ Food: 150, Rent: 800 }` → `["Food", "Rent"]`) — hier genutzt, damit
+  (`{ Food: 150, Rent: 800 }` → `["Food", "Rent"]`), hier genutzt, damit
   `.map(...)` und `.reduce(...)`, die nur auf Arrays funktionieren, über
   die Kategorien von `totals` laufen können.
 
@@ -371,7 +371,7 @@ sortiert ein Array *direkt an Ort und Stelle*, mit einer
 Vergleichsfunktion, die du übergibst: `entries.sort((a, b) => b.amount -
 a.amount)`. Das Ergebnis dieser Vergleichsfunktion entscheidet über die
 Reihenfolge: eine negative Zahl bedeutet, `a` kommt zuerst, eine positive
-Zahl bedeutet, `b` kommt zuerst — `b.amount - a.amount` ist also immer
+Zahl bedeutet, `b` kommt zuerst. `b.amount - a.amount` ist also immer
 dann negativ, wenn `b` kleiner ist als `a`, was den größeren Betrag nach
 vorne setzt, absteigende Reihenfolge. Da `.sort(...)` `entries` selbst
 verändert (anders als `.map(...)`/`.filter(...)`, die immer ein neues
@@ -379,7 +379,7 @@ Array zurückgeben), ruf direkt nach dem Sortieren `saveEntries()` und
 `renderAll()` erneut auf, damit die neue Reihenfolge gespeichert und
 angezeigt wird. Vorsicht mit dem `data-index` des Entfernen-Buttons
 danach: er ist weiterhin einfach "Position im aktuellen Array", bleibt
-also korrekt, solange du nach jeder Änderung neu renderst — baust du aber
+also korrekt, solange du nach jeder Änderung neu renderst. Baust du aber
 auch den 🟡-Filter oben, achte darauf, aus `entries` am richtigen Index zu
 entfernen, nicht am Index der gefilterten Liste.
 
@@ -391,14 +391,14 @@ Kontostand und Diagramm aktualisieren:
 ![Der Budget-Tracker mit mehreren Einträgen und einer Kategorie-Aufschlüsselung](../assets/populated.png)
 
 Öffne [`courses/09-budget-tracker/code/index.html`](../code/index.html) in
-deinem Browser — Doppelklick auf die Datei funktioniert problemlos, da
+deinem Browser. Doppelklick auf die Datei funktioniert problemlos, da
 alles lokal läuft, ohne externe Anfragen.
 
 ## Checkpoint & was du gelernt hast
 
 - `.filter(...)`, um nur die Array-Elemente zu behalten, die eine
   Bedingung erfüllen
-- `.reduce(...)`, um ein Array auf einen Wert zu verdichten — eine Summe
+- `.reduce(...)`, um ein Array auf einen Wert zu verdichten: eine Summe
   oder ein Maximum, dieselbe Methode, nur mit anderem Startwert und
   anderem Schritt
 - `Object.keys(...)`, um die Schlüssel eines Objekts in ein Array zu

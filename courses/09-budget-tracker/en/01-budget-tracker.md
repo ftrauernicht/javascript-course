@@ -1,12 +1,12 @@
 🇬🇧 English | 🇩🇪 [Deutsch](../de/01-budget-tracker.md)
 
-[← Back to course overview](../../../README.md) · Related: [Course 4 – To-Do List](../../04-todo-list/en/01-todo-list.md), [Course 8 – Weather App](../../08-weather-app/en/01-weather-app.md) (neither required — the storage pattern below reuses Course 4's approach, rebuilt from scratch)
+[← Back to course overview](../../../README.md) · Related: [Course 4 – To-Do List](../../04-todo-list/en/01-todo-list.md), [Course 8 – Weather App](../../08-weather-app/en/01-weather-app.md) (neither required: the storage pattern below reuses Course 4's approach, rebuilt from scratch)
 
 # Chapter 1 – Budget Tracker
 
 **Goal:** build a small app that tracks income and expenses, shows your
 current balance, and breaks down spending by category with a simple
-bar chart — built entirely from array methods, no charting library
+bar chart, built entirely from array methods, no charting library
 involved. This course assumes
 [Course 1 – Basics](../../01-basics/en/00-introduction.md) only (values,
 variables, operators, brackets, functions, conditionals, loops) and
@@ -62,14 +62,14 @@ Here's the finished result you're working towards:
 </div>
 ```
 
-`#entry-list` and `#chart` start empty — JavaScript fills both from the
+`#entry-list` and `#chart` start empty. JavaScript fills both from the
 same underlying data, the same "leave a container empty in HTML, fill it
 from JavaScript" approach as every list or grid in earlier courses. See
 the full version in [`index.html`](../code/index.html) and
 [`style.css`](../code/style.css); the CSS is a plain card layout, nothing
 new.
 
-From here on, everything goes into `script.js` — that's the file
+From here on, everything goes into `script.js`, the file
 `index.html` actually loads. Start it with:
 
 ```js
@@ -88,7 +88,7 @@ const chart = document.getElementById("chart");
 ## 🟢 Core — The DOM and storage, in short
 
 *(If you've done Course 3, 4, 5, 6, 7, or 8, most of this will be
-familiar — skip ahead to the next section.)*
+familiar; skip ahead to the next section.)*
 
 - [`document.getElementById(...)`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
   finds one element by its `id`.
@@ -106,13 +106,13 @@ familiar — skip ahead to the next section.)*
   to glue them together, is exactly the rendering pattern
   [Course 4](../../04-todo-list/en/01-todo-list.md) introduced.
 - [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-  is the browser's persistent, key-value storage — data saved there
+  is the browser's persistent, key-value storage: data saved there
   survives closing the tab or the whole browser. It only stores text, so
   saving anything else needs
   [`JSON.stringify(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
   on the way in and
   [`JSON.parse(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
-  on the way out — the same round trip Course 4 used for its tasks.
+  on the way out, the same round trip Course 4 used for its tasks.
 
 These two are given to you, unchanged from that same Course 4 pattern:
 
@@ -130,7 +130,7 @@ let entries = loadEntries();
 ```
 
 Each entry is a plain object: `{ description: "Groceries", amount: 150,
-type: "expense", category: "Food" }` — the object-literal pattern from
+type: "expense", category: "Food" }`, the object-literal pattern from
 earlier courses, one object per row you'll see on screen.
 
 ## 🟢 Core — Array methods that compute a single answer
@@ -140,8 +140,8 @@ item into something, keep the same number of items. This chapter needs
 two different shapes:
 
 **[`.filter(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)**
-keeps only the items a function approves of, and throws the rest away —
-the result is a shorter array (or an equally long one, or empty),
+keeps only the items a function approves of, and throws the rest away.
+The result is a shorter array (or an equally long one, or empty),
 never a transformed version of every item:
 
 ```js
@@ -151,7 +151,7 @@ console.log(even); // [2, 4, 6]
 ```
 
 **[`.reduce(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)**
-walks through an array and boils it down to one single value — a sum, a
+walks through an array and boils it down to one single value: a sum, a
 count, a maximum, anything. It takes a function that receives the
 "running total so far" and the current item, and a starting value:
 
@@ -163,7 +163,7 @@ console.log(total); // 40
 
 Read that as: "start `sum` at `0`; for each `price`, replace `sum` with
 `sum + price`; once every item's been visited, `total` is whatever `sum`
-ended up as." The `0` is the starting value — swap it for something else
+ended up as." The `0` is the starting value. Swap it for something else
 and `.reduce(...)` can compute a maximum instead of a sum, as you'll see
 below.
 
@@ -185,7 +185,7 @@ function calculateBalance() {
 
 `total` starts at `0`. For every entry, the function returns either
 `total + entry.amount` (income makes the balance go up) or `total -
-entry.amount` (an expense makes it go down) — whatever it returns becomes
+entry.amount` (an expense makes it go down); whatever it returns becomes
 the `total` fed into the next entry. After the last one, `.reduce(...)`
 hands back that final `total` directly.
 
@@ -193,7 +193,7 @@ hands back that final `total` directly.
 
 Now your turn, using `.filter(...)` from above.
 `calculateCategoryTotals()` should build and return a plain object shaped
-like `{ Food: 150, Rent: 800, Fun: 40 }` — one key per category that has
+like `{ Food: 150, Rent: 800, Fun: 40 }`: one key per category that has
 at least one expense, mapped to the sum of that category's expenses.
 Steps:
 
@@ -204,7 +204,7 @@ Steps:
    [`.forEach(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
    For each one, add its amount into `totals` under its category's key:
    `totals[entry.category] = (totals[entry.category] || 0) +
-   entry.amount;` — the `|| 0` matters here, since `totals[entry.category]`
+   entry.amount;`. The `|| 0` matters here, since `totals[entry.category]`
    is `undefined` (not `0`) the first time a category shows up, and
    `undefined + entry.amount` would be `NaN`.
 4. Return `totals`.
@@ -225,7 +225,7 @@ function calculateCategoryTotals() {
    `descriptionInput.value`, and read `Number(amountInput.value)`. If the
    description is empty, or the amount isn't a positive number (`!(amount
    > 0)` catches `0`, negative numbers, and `NaN` from an empty field all
-   at once), `return` — nothing to add.
+   at once), `return`: nothing to add.
 3. Push a new entry object onto `entries`: `{ description: description,
    amount: amount, type: typeInput.value, category: categoryInput.value
    }`.
@@ -241,15 +241,15 @@ function handleAddEntry(event) {
 entryForm.addEventListener("submit", handleAddEntry);
 ```
 
-Save, reload `index.html`, and add an entry — it should show up in the
+Save, reload `index.html`, and add an entry. It should show up in the
 list and the balance should update. If you get stuck,
 [`code/script.js`](../code/script.js) shows one way to write both
 functions.
 
 ## 🟢 Core — Rendering everything
 
-These are given to you — pure DOM rendering built on the functions above,
-not the point of this chapter:
+These are given to you, pure DOM rendering built on the functions above
+and not the point of this chapter:
 
 ```js
 function formatAmount(amount) {
@@ -326,18 +326,18 @@ Two things worth noticing:
 
 - [`.toFixed(2)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
   rounds a number to 2 decimal places and returns it as a string, so
-  `150` shows as `$150.00`, not `$150` — the same method
+  `150` shows as `$150.00`, not `$150`, the same method
   [Course 5](../../05-unit-converter/en/01-unit-converter.md) used.
 - The "chart" is plain CSS: `.bar-track` is a fixed-width gray strip,
   `.bar-fill` inside it gets a `width` percentage set directly from
   JavaScript (`style="width: 65%"`), scaled so the category spending the
   most fills the track completely (`percent = amount / highest * 100`) and
-  every other bar is proportionally shorter. No chart library involved —
+  every other bar is proportionally shorter. No chart library involved.
   `.reduce(...)` finding the highest total is what makes the scaling
   possible.
 - [`Object.keys(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
   turns an object's keys into a plain array (`{ Food: 150, Rent: 800 }` →
-  `["Food", "Rent"]`) — used here so `.map(...)` and `.reduce(...)`, which
+  `["Food", "Rent"]`), used here so `.map(...)` and `.reduce(...)`, which
   only work on arrays, can walk over `totals`'s categories.
 
 ## 🟡 Optional — Filter the list by type
@@ -358,13 +358,13 @@ sorts an array *in place* using a compare function you provide:
 `entries.sort((a, b) => b.amount - a.amount)`. That compare function's
 result decides the order: a negative number means `a` comes first, a
 positive number means `b` comes first, so `b.amount - a.amount` is
-negative whenever `b` is smaller than `a` — putting the larger amount
+negative whenever `b` is smaller than `a`, putting the larger amount
 first, descending order. Since `.sort(...)` changes `entries` itself
 (unlike `.map(...)`/`.filter(...)`, which always return a new array), call
 `saveEntries()` and `renderAll()` again right after sorting so the new
 order is saved and shown. Careful with the remove button's `data-index`
 after this: it's still just "position in the current array," so it stays
-correct as long as you re-render after every change — but if you build
+correct as long as you re-render after every change. But if you build
 the 🟡 filter above too, make sure you're removing from `entries` at the
 right index, not the filtered list's index.
 
@@ -376,13 +376,13 @@ update:
 ![The budget tracker with several entries and a category breakdown](../assets/populated.png)
 
 Open [`courses/09-budget-tracker/code/index.html`](../code/index.html) in
-your browser — double-clicking the file works fine, since everything is
+your browser. Double-clicking the file works fine, since everything is
 local with no external requests.
 
 ## Checkpoint & what you learned
 
 - `.filter(...)` to keep only the array items that match a condition
-- `.reduce(...)` to boil an array down to one value — a sum or a maximum,
+- `.reduce(...)` to boil an array down to one value: a sum or a maximum,
   same method either way, just a different starting value and step
 - `Object.keys(...)` to turn an object's keys into an array you can
   `.map(...)`/`.reduce(...)` over
