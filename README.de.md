@@ -79,6 +79,25 @@ Kurs 2 bis Kurs 11 sind jeweils **unabhängige, eigenständige** Projekte, die
 nur Kurs 1 voraussetzen — keiner setzt einen der anderen voraus. Wähl, was
 dich mehr reizt, in welcher Reihenfolge du willst.
 
+### Auf einen Blick
+
+Die Zeitangaben sind grob. Ein Abend meint zwei bis drei Stunden, in denen du alles
+selbst tippst. Wer nur liest, ist deutlich schneller und lernt deutlich weniger.
+
+| # | Kurs | Was dazukommt | Setzt voraus | Dauer |
+|---|---|---|---|---|
+| 1 | Basics | Werte, Verzweigungen, Schleifen und Funktionen in der Browserkonsole | nichts | drei Abende |
+| 2 | Taschenrechner Konsole | Eingaben lesen und entscheiden, was damit passiert, noch ohne Seite | Kurs 1 | ein Abend |
+| 3 | Taschenrechner GUI | HTML und CSS, und die erste Oberfläche zum Anklicken | Kurs 1 | zwei Abende |
+| 4 | To-Do-Liste | Daten nach HTML rendern, statt HTML von Hand zu schreiben | Kurs 1 | zwei Abende |
+| 5 | Einheitenumrechner | Die Rechenlogik schreibst du selbst, mitgeliefert wird deutlich weniger | Kurs 1 | zwei Abende |
+| 6 | Quiz | Zustand über mehrere Ansichten halten, mit Punkten und Rückmeldung | Kurs 1 | zwei Abende |
+| 7 | Memory-Spiel | Ein gemischtes Raster, eine CSS-Animation und eine Verzögerung, die sitzen muss | Kurs 1 | zwei Abende |
+| 8 | Wetter-App | Dein Code spricht über das Netz mit einer öffentlichen API | Kurs 1 | zwei Abende |
+| 9 | Budget-Tracker | Datensätze summieren und gruppieren, dazu ein Diagramm aus reinem CSS | Kurs 1 | zwei Abende |
+| 10 | REST-API mit Node.js + Express | JavaScript außerhalb des Browsers, das Anfragen beantwortet | Kurs 1 | zwei Abende |
+| 11 | Full-Stack-Notizen-App | Frontend und Backend reden miteinander, dahinter SQLite | Kurs 1 | drei Abende |
+
 ### Kurs 1 – Basics (`courses/01-basics/`)
 
 Nicht an ein bestimmtes Projekt gebunden — das gemeinsame Vokabular, das

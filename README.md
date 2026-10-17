@@ -74,6 +74,25 @@ through 11 are each **independent, standalone** projects that only assume
 Course 1 — none of them requires any of the others. Pick whichever sounds
 more interesting, in whatever order you like.
 
+### At a glance
+
+The times are rough. An evening means two to three hours in which you type everything
+yourself; reading a course without typing is a lot faster and teaches a lot less.
+
+| # | Course | What it adds | Requires | Time |
+|---|---|---|---|---|
+| 1 | Basics | Values, branching, loops and functions in the browser console | nothing | three evenings |
+| 2 | Calculator Console | Reading input and deciding what to do with it, still without a page | Course 1 | an evening |
+| 3 | Calculator GUI | HTML and CSS, and the first interface somebody can click | Course 1 | two evenings |
+| 4 | To-Do List | Rendering data into HTML instead of writing the HTML by hand | Course 1 | two evenings |
+| 5 | Unit Converter | The conversion logic is yours; much less finished code is handed over | Course 1 | two evenings |
+| 6 | Quiz | Keeping state across several screens, with scoring and feedback | Course 1 | two evenings |
+| 7 | Memory Game | A shuffled grid, a CSS animation and a delay that has to be right | Course 1 | two evenings |
+| 8 | Weather App | Your code talks to a public API over the network | Course 1 | two evenings |
+| 9 | Budget Tracker | Summing and grouping records, and a chart drawn in plain CSS | Course 1 | two evenings |
+| 10 | REST API with Node.js + Express | JavaScript outside the browser, answering requests | Course 1 | two evenings |
+| 11 | Full-Stack Notes App | A frontend and a backend talking to each other, with SQLite behind them | Course 1 | three evenings |
+
 ### Course 1 – Basics (`courses/01-basics/`)
 
 Not tied to any one project — the shared vocabulary every later course
